@@ -1,0 +1,123 @@
+%
+% Copyright (c) 2014, Jonathan Anderson <jonathan.anderson@mun.ca>.
+% All rights reserved.
+%
+% Redistribution and use in source and binary forms, with or without
+% modification, are permitted provided that the following conditions are met:
+%
+% 1. Redistributions of source code must retain the above copyright notice,
+% this list of conditions and the following disclaimer.
+%
+% 2. Redistributions in binary form must reproduce the above copyright notice,
+% this list of conditions and the following disclaimer in the documentation
+% and/or other materials provided with the distribution.
+%
+% THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+% AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+% IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+% ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+% LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+% CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+% SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+% INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+% CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+% ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+% POSSIBILITY OF SUCH DAMAGE.
+%
+
+%
+% The courseoutline class currently accepts two options:
+%
+%   - engineering:  Use the names "Engineering", "Faculty of Engineering", etc.
+%                   in the relevant places and emit the Faculty's policy on
+%                   academic integrity ("Like Professional Engineers...").
+%   - safelabs:     Don't emit a "Lab Safety" section even if a lab slot is
+%                   declared with \lab{}{}. This is intended for use with
+%                   computer labs (not electrical, structural, chemical labs).
+%
+\documentclass[engineering]{courseoutline}
+
+\coursename{Fundamentals of Widgets}
+\coursenumber{1000}
+\courseterm{Fall 2014}
+\prerequisites{MATH1000}
+
+\officialdescription{
+Engineering 1000 Fundamentals of Widgets provides first-year students
+with introductory exposure to the analysis and design of widgets.
+Topics include widget geometry, statics, dynamics and the application
+of electricity to non-conductive widgets.
+}
+%\fulldescription{a longer, perhaps less official, description}
+
+\website{http://www.engr.mun.ca/teaching/ENGI1000}
+%\communication{Distance learning / web submission details}
+
+\instructor{Your name}
+\email{your.email@provider.com}
+\phone{864-1234}
+\office{EN1234}
+\officehours{Tue 15:00--16:00}
+
+\ta{Ingrid M Engineer}
+\tamail{imeng@mun.ca}
+\taphone{(123) 456-7890 x9876}
+\taoffice{EN1235}
+\tahours{Thu 15:00--16:00}
+
+\lecture{MWF X:00--Y:00}{EN-2001}
+\tutorial{Tue 14:00--15:00}{EN-2002}
+\lab{Fri 14:00--17:00}{EN-2003}
+
+\begin{document}
+
+\maketitle
+
+\section{Major Topics}
+
+\begin{itemize}
+\item Widget fundamentals
+\item Widget analysis
+\item Widgets and society
+\item Advanced widget design
+\end{itemize}
+
+
+\section{Learning Outcomes}
+
+Upon successful completion of this course, the student will be able to:
+
+\begin{enumerate}
+\item explain the theoretical foundations of widgets,
+\item analyze the design and application of a standard widget,
+\item design simple widgets,
+\item synthesize widget specifications and
+\item evaluate the fitness of a widget for a specification.
+\end{enumerate}
+
+
+\section{Assessment}
+
+Assignments will be given \dots
+Written evaluation will take place in October and during the final exam
+weeks (8--17~Dec).
+The month of November should largely be used for project work.
+
+\vspace{1em}
+\begin{tabular}{llr}
+  \head{Assignments (5/6)} &              & 10\% \\
+  \qquad Assignment 0      & 15 September &      \\
+  \qquad Assignment 1      & 22 September &      \\
+  \qquad Assignment 2      & 29 September &      \\
+  \qquad Assignment 3      &  6 October   &      \\
+
+\head{Quiz}                &  3 October   &  5\% \\
+\head{Midterm exam}        & 17 October   & 15\% \\
+\head{Project}             &  1 December  & 20\% \\
+\head{Final Exam}          &              & 50\%
+\end{tabular}
+
+
+\boilerplate
+
+\end{document}
