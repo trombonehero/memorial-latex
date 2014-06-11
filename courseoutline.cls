@@ -263,12 +263,11 @@
 
   \mbox{
     \parbox{3.25in}{
-      \includegraphics[width=1.2in]{memorial} \vspace{8pt} \\
-      \textcolor{MUNGrey}{\bf\hspace{5pt}\@faculty}
+      \includegraphics[width=1.1in]{memorial} \vspace{6pt} \\
+      \textcolor{MUNGrey}{\bf \hspace{5pt}\@faculty}
     }
     \parbox{2in}{
-      \large \bf
-      \color{MUNGrey}
+      \bf \color{MUNGrey}
       Course Outline \\
       \@courseprefix \@coursenumber \\
       \\
