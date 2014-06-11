@@ -42,7 +42,7 @@
 %                   in the relevant places and emit the Faculty's policy on
 %                   academic integrity ("Like Professional Engineers...").
 %   - safelabs:     Don't emit a "Lab Safety" section even if a lab slot is
-%                   declared with \lab{}{}. This is intended for use with
+%                   declared with \lab. This is intended for use with
 %                   computer labs (not electrical, structural, chemical labs).
 %
 % The following commands must be used to declare key information about the
@@ -76,7 +76,7 @@
 %
 % \lecture{MWF 9:00--10:00}{EN2006}
 % \tutorial{Tue 14:00--15:00}{EN2006}
-% \lab{Thu 14:00--17:00}{EN3099}
+% \lab{Thu}{14:00}{17:00}{EN3099}
 %
 %
 % Based on this input, the class exports the following commands:
@@ -161,8 +161,16 @@
 
 \newcommand{\@calendar}{includes modules on foo, bar, baz and wibble.}
 
-\newcommand{\@lecturehours}{MWF X:00--Y:00}
+\newcommand{\@lecturedays}{MWF}
+\newcommand{\@lecturestart}{X:00}
+\newcommand{\@lecturefinish}{Y:00}
 \newcommand{\@lectureroom}{EN-XXXX}
+
+\newif\if@tutorial
+\@tutorialfalse
+
+\newif\if@labs
+\@labsfalse
 
 \newcommand{\@textbook}{--}
 \newcommand{\@references}{--}
@@ -195,19 +203,29 @@
 \newcommand{\fulldescription}[1]{\newcommand\@description{#1}}
 \newcommand{\prerequisites}[1]{\newcommand\@prereqs{#1}}
 
-\newcommand{\lecture}[2]{
-  \renewcommand\@lecturehours{#1}
-  \renewcommand\@lectureroom{#2}
+\newcommand{\lecture}[4]{
+  \renewcommand\@lecturedays{#1}
+  \renewcommand\@lecturestart{#2}
+  \renewcommand\@lecturefinish{#3}
+  \renewcommand\@lectureroom{#4}
 }
 
-\newcommand{\tutorial}[2]{
-  \newcommand\@tutorialhours{#1}
-  \newcommand\@tutorialroom{#2}
+\newcommand{\tutorial}[4]{
+  \newcommand\@tutorialdays{#1}
+  \newcommand\@tutorialstart{#2}
+  \newcommand\@tutorialfinish{#3}
+  \newcommand\@tutorialroom{#4}
+
+  \@tutorialtrue
 }
 
-\newcommand{\lab}[2]{
-  \newcommand\@labhours{#1}
-  \newcommand\@labroom{#2}
+\newcommand{\lab}[4]{
+  \newcommand\@labdays{#1}
+  \newcommand\@labstart{#2}
+  \newcommand\@labfinish{#3}
+  \newcommand\@labroom{#4}
+
+  \@labstrue
 }
 
 
@@ -216,6 +234,22 @@
 %
 \newcommand{\nameandnumber}{\@shortfaculty~\@coursenumber}
 \newcommand{\shortname}{\nameandnumber:~\@coursename}
+
+\newcommand{\lecturehours}{
+  \@lecturedays~\@lecturestart{ -- }\@lecturefinish
+}
+
+\newcommand{\tutorialhours}{
+  \ifdefined\@tutorialdays
+    \@tutorialdays~\@tutorialstart{ -- }\@tutorialfinish
+  \fi
+}
+
+\newcommand{\labhours}{
+  \ifdefined\@labdays
+    \@labdays~\@labstart{ -- }\@labfinish
+  \fi
+}
 
 
 %
@@ -301,13 +335,13 @@
     \ifdefined \@prereqs     \head{Prerequisite(s)}& \wide{\@prereqs}     \\ \fi
 
     \head{Schedule}
-        & Lecture(s)  & \@lecturehours   & \@lectureroom   \\
+        & Lecture     & \lecturehours   & \@lectureroom   \\
 
-      \ifdefined\@tutorialhours
-        & Tutorial    & \@tutorialhours  & \@tutorialroom  \\ \fi
+      \if@tutorial
+        & Tutorial    & \tutorialhours  & \@tutorialroom  \\ \fi
 
-      \ifdefined\@labhours
-        & Lab         & \@labhours       & \@labroom       \\ \fi
+      \if@labs
+        & Lab         & \labhours       & \@labroom       \\ \fi
 
     \head{Credit value} & 3 credit-hours                \\
 
