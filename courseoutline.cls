@@ -33,6 +33,9 @@
 % but should be customisable for other faculties and departments via LaTeX
 % class options.
 %
+% The class assumes that you have installed the commercial Adobe Garamond Pro
+% files (licensed by the University) and are running under XeLaTeX.
+%
 % The class currently supports two options:
 %
 %   - engineering:  Use the names "Engineering", "Faculty of Engineering", etc.
@@ -88,13 +91,12 @@
 % Use the basic article structure.
 \LoadClass{article}
 
+\RequirePackage{mun-fonts}
+
 \RequirePackage{fancyhdr}
-\RequirePackage[T1]{fontenc}
 \RequirePackage[top=0.5in]{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{hyperref}
-\RequirePackage{inconsolata}
-\RequirePackage[urw-garamond]{mathdesign}
 \RequirePackage{tabularx}
 \RequirePackage{titlesec}
 \RequirePackage[cmyk,svgnames]{xcolor}
