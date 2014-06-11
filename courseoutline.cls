@@ -74,8 +74,8 @@
 %
 % \prerequisites{ENGI1020,MATH1000}
 %
-% \lecture{MWF 9:00--10:00}{EN2006}
-% \tutorial{Tue 14:00--15:00}{EN2006}
+% \lecture{MWF}{9:00}{10:00}{EN2006}
+% \tutorial{Tue}{14:00}{15:00}{EN2006}
 % \lab{Thu}{14:00}{17:00}{EN3099}
 %
 %
