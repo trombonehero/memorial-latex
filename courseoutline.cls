@@ -56,7 +56,7 @@
 % \email{your.email@provider.com}
 % \phone{(123) 456-7890 x9876}
 % \office{EN1234}
-% \officehours{Tue 15:00--16:00}
+% \officehours{Tue}{15:00}{16:00}
 %
 %
 % The following commands are optional:
@@ -65,7 +65,7 @@
 % \tamail{\{ta1,ta2\}@provider.com}
 % \taphone{(123) 456-7890 x1234}
 % \taoffice{EN4321}
-% \tahours{Thu 15:00--16:00}
+% \tahours{Thu}{15:00}{16:00}
 %
 % \website{http://faculty.uni.com/course_website}      % no need for \url{}!
 % \communication{other ways to communicate}
@@ -150,14 +150,15 @@
 \newcommand{\@email}{dr.no@mun.ca}
 \newcommand{\@phone}{864-XXXX}
 \newcommand{\@office}{EN-XXXX}
-\newcommand{\@officehours}{Tue X:00-Y:00}
+\newcommand{\@officedays}{X}
+\newcommand{\@officestart}{Y:00}
+\newcommand{\@officefinish}{Z:00}
 
 \newcommand{\@talabel}{}
 \newcommand{\@ta}{}
 \newcommand{\@tamail}{}
 \newcommand{\@taphone}{}
 \newcommand{\@taoffice}{}
-\newcommand{\@tahours}{}
 
 \newcommand{\@calendar}{includes modules on foo, bar, baz and wibble.}
 
@@ -189,13 +190,21 @@
 \newcommand{\email}[1]{\renewcommand\@email{#1}}
 \newcommand{\phone}[1]{\renewcommand\@phone{#1}}
 \newcommand{\office}[1]{\renewcommand\@office{#1}}
-\newcommand{\officehours}[1]{\renewcommand\@officehours{#1}}
+\newcommand{\officehours}[3]{
+  \renewcommand\@officedays{#1}
+  \renewcommand\@officestart{#2}
+  \renewcommand\@officefinish{#3}
+}
 
 \newcommand{\ta}[1]{\renewcommand\@talabel{TA(s)}\renewcommand\@ta{#1}}
 \newcommand{\tamail}[1]{\renewcommand\@tamail{#1}}
 \newcommand{\taphone}[1]{\renewcommand\@taphone{#1}}
 \newcommand{\taoffice}[1]{\renewcommand\@taoffice{#1}}
-\newcommand{\tahours}[1]{\renewcommand\@tahours{#1}}
+\newcommand{\tahours}[3]{
+  \newcommand\@taofficedays{#1}
+  \newcommand\@taofficestart{#2}
+  \newcommand\@taofficefinish{#3}
+}
 
 \newcommand{\website}[1]{\newcommand\@website{#1}}
 \newcommand{\communication}[1]{\newcommand\@othercomms{#1}}
@@ -235,6 +244,15 @@
 \newcommand{\nameandnumber}{\@shortfaculty~\@coursenumber}
 \newcommand{\shortname}{\nameandnumber:~\@coursename}
 
+\newcommand{\@officehours}{
+  \@officedays~\@officestart{\textendash}\@officefinish
+}
+
+\newcommand{\@tahours}{
+  \ifdefined\@taofficedays
+    \@taofficedays~\@taofficestart{\textendash}\@taofficefinish
+  \fi
+}
 \newcommand{\lecturehours}{
   \@lecturedays~\@lecturestart{\textendash}\@lecturefinish
 }
