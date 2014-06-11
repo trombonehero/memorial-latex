@@ -92,6 +92,7 @@
 \LoadClass{article}
 
 \RequirePackage{mun-fonts}
+\RequirePackage{mun-colour}
 
 \RequirePackage{fancyhdr}
 \RequirePackage[top=0.5in]{geometry}
@@ -99,7 +100,6 @@
 \RequirePackage{hyperref}
 \RequirePackage{tabularx}
 \RequirePackage{titlesec}
-\RequirePackage[cmyk,svgnames]{xcolor}
 
 %
 % Use the names "Engineering", "Faculty of Engineering and Applied Science"
@@ -221,10 +221,7 @@
 %
 % Memorial colours:
 %
-\definecolor{MUNClaret}{cmyk}{0, 1, .61, .43}
-\definecolor{MUNGrey}{cmyk}{.61, .53, .48, .19}
-
-\newcommand{\headcolor}{\color{MUNClaret}}
+\newcommand{\headercolour}{\color{MUNClaret}}
 
 
 %
@@ -237,13 +234,13 @@
 \fancyhead{}
 \fancyfoot{}
 
-\fancyhead[R] {\headcolor \it \shortname~\@courseterm}
-\fancyfoot[C] {\color{MUNClaret} \bf \thepage}
+\fancyhead[R] {\headercolour \it \shortname~\@courseterm}
+\fancyfoot[C] {\headercolour \bf \thepage}
 
 \fancypagestyle{plain}{
 \setlength{\headheight}{.25in}
 \fancyhead {}
-\fancyfoot[C] {\color{MUNClaret} \bf \thepage}
+\fancyfoot[C] {\headercolour \bf \thepage}
 }
 
 
@@ -257,7 +254,7 @@
 % Customised title:
 %
 \renewcommand{\arraystretch}{1}
-\newcommand{\head}[1]{\textbf{\headcolor #1}}
+\newcommand{\head}[1]{\textbf{\headercolour #1}}
 \newcommand{\wide}[1]{\multicolumn{3}{p{0.85 \hsize}}{#1}}
 
 \renewcommand{\maketitle}
@@ -281,7 +278,7 @@
 
   \vspace{.2in}
 
-  {\bf \LARGE \headcolor \shortname} \\
+  {\bf \LARGE \headercolour \shortname} \\
 
   \vspace{.1in}
 
@@ -328,9 +325,9 @@
 \titlespacing{\subsection}{0pt}{1em}{0.25em}
 \titlespacing{\subsubsection}{0pt}{0.5em}{0em}
 
-\titleformat{name=\section}{\Large \bf \headcolor}{\thesection}{.5em}{}
-\titleformat{name=\subsection}{\large \bf \headcolor}{\thesubsection}{.5em}{}
-\titleformat{name=\subsubsection}{\bf \headcolor}{\thesubsubsection}{.5em}{}
+\titleformat{name=\section}{\Large \bf \headercolour}{\thesection}{.5em}{}
+\titleformat{name=\subsection}{\large \bf \headercolour}{\thesubsection}{.5em}{}
+\titleformat{name=\subsubsection}{\bf \headercolour}{\thesubsubsection}{.5em}{}
 
 
 %
