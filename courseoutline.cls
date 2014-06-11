@@ -172,8 +172,8 @@
 \newif\if@labs
 \@labsfalse
 
-\newcommand{\@textbook}{--}
-\newcommand{\@references}{--}
+\newcommand{\@textbook}{\textendash}
+\newcommand{\@references}{\textendash}
 
 
 %
@@ -236,18 +236,18 @@
 \newcommand{\shortname}{\nameandnumber:~\@coursename}
 
 \newcommand{\lecturehours}{
-  \@lecturedays~\@lecturestart{ -- }\@lecturefinish
+  \@lecturedays~\@lecturestart{\textendash}\@lecturefinish
 }
 
 \newcommand{\tutorialhours}{
   \ifdefined\@tutorialdays
-    \@tutorialdays~\@tutorialstart{ -- }\@tutorialfinish
+    \@tutorialdays~\@tutorialstart{\textendash}\@tutorialfinish
   \fi
 }
 
 \newcommand{\labhours}{
   \ifdefined\@labdays
-    \@labdays~\@labstart{ -- }\@labfinish
+    \@labdays~\@labstart{\textendash}\@labfinish
   \fi
 }
 
