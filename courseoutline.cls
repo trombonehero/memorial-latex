@@ -245,27 +245,27 @@
 \newcommand{\shortname}{\nameandnumber:~\@coursename}
 
 \newcommand{\@officehours}{
-  \@officedays~\@officestart{\textendash}\@officefinish
+  \@officedays~\@officestart--\@officefinish
 }
 
 \newcommand{\@tahours}{
   \ifdefined\@taofficedays
-    \@taofficedays~\@taofficestart{\textendash}\@taofficefinish
+    \@taofficedays~\@taofficestart--\@taofficefinish
   \fi
 }
 \newcommand{\lecturehours}{
-  \@lecturedays~\@lecturestart{\textendash}\@lecturefinish
+  \@lecturedays~\@lecturestart--\@lecturefinish
 }
 
 \newcommand{\tutorialhours}{
   \ifdefined\@tutorialdays
-    \@tutorialdays~\@tutorialstart{\textendash}\@tutorialfinish
+    \@tutorialdays~\@tutorialstart--\@tutorialfinish
   \fi
 }
 
 \newcommand{\labhours}{
   \ifdefined\@labdays
-    \@labdays~\@labstart{\textendash}\@labfinish
+    \@labdays~\@labstart--\@labfinish
   \fi
 }
 
