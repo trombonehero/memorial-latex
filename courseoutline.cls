@@ -271,12 +271,6 @@
 
 
 %
-% Memorial colours:
-%
-\newcommand{\headercolour}{\color{MUNClaret}}
-
-
-%
 % Page headers:
 %
 \pagestyle{fancy}
@@ -287,12 +281,12 @@
 \fancyfoot{}
 
 \fancyhead[R] {\headercolour \it \shortname~\@courseterm}
-\fancyfoot[C] {\headercolour \bf \thepage}
+\fancyfoot[C] {\neutralcolour \bf \thepage}
 
 \fancypagestyle{plain}{
 \setlength{\headheight}{.25in}
 \fancyhead {}
-\fancyfoot[C] {\headercolour \bf \thepage}
+\fancyfoot[C] {\neutralcolour \bf \thepage}
 }
 
 
@@ -316,10 +310,10 @@
   \mbox{
     \parbox{3.25in}{
       \includegraphics[width=1.1in]{memorial} \vspace{6pt} \\
-      \textcolor{MUNGrey}{\bf \hspace{5pt}\@faculty}
+      {\neutralcolour \bf \hspace{5pt}\@faculty}
     }
     \parbox{2in}{
-      \bf \color{MUNGrey}
+      \neutralcolour \bf
       Course Outline \\
       \@courseprefix \@coursenumber \\
       \\
