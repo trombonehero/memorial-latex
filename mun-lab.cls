@@ -35,7 +35,9 @@
 \RequirePackage{mun-fonts}
 \RequirePackage{mun-colour}
 
+\RequirePackage{calc}
 \RequirePackage{fancyhdr}
+\RequirePackage{framed}
 \RequirePackage[top=0.5in]{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{hyperref}
@@ -173,6 +175,17 @@
 \titleformat{name=\section}{\Large \bf \headercolour}{\thesection}{.5em}{}
 \titleformat{name=\subsection}{\large \bf \headercolour}{\thesubsection}{.5em}{}
 \titleformat{name=\subsubsection}{\bf \headercolour}{\thesubsubsection}{.5em}{}
+
+
+\newenvironment{answer}
+{
+	\hspace{.5in}\begin{minipage}{\linewidth - .5in}
+	\begin{framed} \textbf{Answer:}
+}
+{
+	\end{framed}
+	\end{minipage}
+}
 
 
 \makeatother
