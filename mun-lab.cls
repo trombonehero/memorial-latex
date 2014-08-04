@@ -37,10 +37,10 @@
 
 \RequirePackage{calc}
 \RequirePackage{fancyhdr}
-\RequirePackage{framed}
 \RequirePackage[top=0.5in]{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{hyperref}
+\RequirePackage[framemethod=tikz]{mdframed}
 \RequirePackage{parskip}
 \RequirePackage{tabularx}
 \RequirePackage{titlesec}
@@ -179,12 +179,16 @@
 
 \newenvironment{answer}
 {
-	\hspace{.5in}\begin{minipage}{\linewidth - .5in}
-	\begin{framed} \textbf{Answer:}
+  \begin{mdframed}[frametitle=Answer,
+    linecolor=MidnightBlue, backgroundcolor=AliceBlue!50,
+    leftmargin=1em, rightmargin=1em,
+    skipabove=1em, skipbelow=1em,
+    outerlinewidth=1pt, roundcorner=.5em,
+    frametitlefont={\normalfont\bfseries\color{MidnightBlue}},
+  ]
 }
 {
-	\end{framed}
-	\end{minipage}
+  \end{mdframed}
 }
 
 
