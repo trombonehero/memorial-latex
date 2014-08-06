@@ -177,9 +177,9 @@
 %
 % Section, etc. headings:
 %
-\titlespacing{\section}{0pt}{2em}{.75em}
+\titlespacing{\section}{0pt}{1.5em}{.75em}
 \titlespacing{\subsection}{0pt}{1em}{0.25em}
-\titlespacing{\subsubsection}{0pt}{0.5em}{0em}
+\titlespacing{\subsubsection}{0pt}{1em}{0em}
 
 \titleformat{name=\section}{\Large \bf \headercolour}{\thesection}{.5em}{}
 \titleformat{name=\subsection}{\large \bf \headercolour}{\thesubsection}{.5em}{}
