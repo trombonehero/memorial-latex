@@ -40,10 +40,12 @@
 \RequirePackage[top=0.5in]{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{hyperref}
+\RequirePackage{ifthen}
 \RequirePackage[framemethod=tikz]{mdframed}
 \RequirePackage{parskip}
 \RequirePackage{tabularx}
 \RequirePackage{titlesec}
+\RequirePackage{verbatim}
 
 %
 % Use the names "Engineering", "Faculty of Engineering and Applied Science"
@@ -64,6 +66,13 @@
 \newif\if@safelabs
 \@safelabsfalse
 \DeclareOption{safelabs}{\@safelabstrue}
+
+%
+% Include answers in the output.
+%
+\newif\if@showanswers
+\@showanswersfalse
+\DeclareOption{answerkey}{\@showanswerstrue \newcommand{\showanswers}{}}
 
 %
 % Pass the remaining options to 'article'.
@@ -179,16 +188,21 @@
 
 \newenvironment{answer}
 {
-  \begin{mdframed}[frametitle=Answer,
+  \ifthenelse{\isundefined{\showanswers}}
+  {\expandafter\comment}
+  {\begin{mdframed}[frametitle=Answer,
     linecolor=MidnightBlue, backgroundcolor=AliceBlue!50,
     leftmargin=1em, rightmargin=1em,
     skipabove=1em, skipbelow=1em,
     outerlinewidth=1pt, roundcorner=.5em,
     frametitlefont={\normalfont\bfseries\color{MidnightBlue}},
-  ]
+    ]
+  }
 }
 {
-  \end{mdframed}
+  \ifthenelse{\isundefined{\showanswers}}
+  {\expandafter\endcomment}
+  {\end{mdframed}}
 }
 
 
