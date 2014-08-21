@@ -59,15 +59,6 @@
 \DeclareOption{engineering}{\@engineeringtrue}
 
 %
-% Don't emit the "Lab Safety" section, even if there is a lab slot.
-% This is for use with computer labs, which don't require PPE, etc. like
-% oher labs (electrical, structural, chemical...).
-%
-\newif\if@safelabs
-\@safelabsfalse
-\DeclareOption{safelabs}{\@safelabstrue}
-
-%
 % Include answers in the output.
 %
 \newif\if@showanswers
