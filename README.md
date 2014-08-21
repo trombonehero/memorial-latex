@@ -6,11 +6,11 @@ even students) at [Memorial University of Newfoundland](http://www.mun.ca).
 
 ## Colours and fonts
 
-[mun-colour.sty](blob/master/mun-colour.sty)
+[mun-colour.sty](mun-colour.sty)
 provides official Memorial colours
 (`\color{MUNClaret}` and `\color{MUNGrey}`)
 in CMYK.
-[mun-fonts.sty](blob/master/mun-fonts.sty)
+[mun-fonts.sty](mun-fonts.sty)
 sets fonts to the official MUN fonts
 (Adobe Garamond Pro for serif, with Semibold as `bf`,
 plus Avenir Light for sans-serif)
@@ -21,7 +21,7 @@ but, well, life's too short.
 
 ## Course outline
 
-[courseoutline.cls](blob/master/courseoutline.cls)
+[courseoutline.cls](courseoutline.cls)
 is a class for course outlines as required by
 [section 6.6 of Memorial's Calendar](http://www.mun.ca/regoff/calendar/sectionNo=REGS-0601).
 It is currently targeted at Engineering courses, according to the original
@@ -91,7 +91,7 @@ of electricity to non-conductive widgets.
 
 ## Lab
 
-[mun-lab.cls](blob/master/mun-lab.cls) is a class for writing lab
+[mun-lab.cls](mun-lab.cls) is a class for writing lab
 procedures with nice headers and an `answer` environment for TA grading.
 I use it like this:
 
@@ -151,7 +151,7 @@ Checked out revision 0.
 
 ## Memo
 
-[mun-memo.cls](blob/master/mun-memo.cls) is a very simple memo class
+[mun-memo.cls](mun-memo.cls) is a very simple memo class
 that includes a `\signatureline` command.
 An example of what I use it for:
 
