@@ -331,10 +331,11 @@
 
     \ifdefined
                \@website     \head{Website}        & \wide{\url{\@website}}
-               \\[.5em]
+               \\
     \fi
 
     \ifdefined \@othercomms  \head{Communication}  & \wide{\@othercomms}  \\ \fi
+    \\[-.75em]
                              \head{Calendar entry} & \wide{\@calendar}    \\
     \ifdefined \@description \head{Description}    & \wide{\@description} \\ \fi
     \ifdefined \@prereqs     \head{Prerequisite(s)}& \wide{\@prereqs}     \\ \fi
