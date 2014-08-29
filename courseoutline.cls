@@ -310,10 +310,21 @@
   \vspace{.1in}
 
   \begin{tabularx}{\textwidth}{lXlX}
-    \head{Instructor}   & \@name         & \head{\@talabel} & \@ta         \\
-                        & \@email        &              & \@tamail     \\
-                        & \@phone        &              & \@taphone    \\
-                        & \@office       &              & \@taoffice   \\
+    \head{Instructor}
+    & \parbox[t]{2in}{
+      \@name \\
+      \@email \\
+      \@phone \\
+      \@office
+    }
+    & \head{\@talabel}
+    & \parbox[t]{2in}{
+      \@ta \\
+      \@tamail \\
+      \@taphone \\
+      \@taoffice
+    }
+    \\[-1em]
     \head{Office Hours} & \@officehours  &              & \@tahours
 
     \\[.5em]
