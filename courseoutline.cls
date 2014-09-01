@@ -228,6 +228,9 @@
   \@labstrue
 }
 
+\newcommand{\textbook}[1]{\renewcommand\@textbook{#1}}
+\newcommand{\references}[1]{\renewcommand\@references{#1}}
+
 
 %
 % Externally-visible outputs (also documented in the header comment):
@@ -351,8 +354,10 @@
 
     \head{Credit value} & 3 credit-hours                \\
 
-    \head{Resources}  & Textbook         & \@textbook   \\
-                      & References       & \@references \\
+    \head{Textbook}
+      & \multicolumn{3}{l}{\parbox[t]{5.5in}{\@textbook}}   \\
+    \head{References}
+      & \multicolumn{3}{l}{\parbox[t]{5.5in}{\@references}} \\
   \end{tabularx}
 }
 
