@@ -50,7 +50,7 @@ lab safety text (PPE, "safe work practices", etc.).
 I use this option for my courses, where "the lab" is a computer lab.
 
 A complete example is provided in
-[courseoutline-example.tex](courseoutline-example.tex).
+[examples/courseoutline-example.tex](examples/courseoutline-example.tex).
 
 
 ## Exam
@@ -70,7 +70,7 @@ and `\cleardoublepage`.
 [mun-lab.cls](mun-lab.cls) is a class for writing lab
 procedures with nice headers and an `answer` environment for TA grading.
 It accepts the `answerkey` option for producing answer keys.
-Also see [mun-lab-example.tex](mun-lab-example.tex).
+Also see [examples/mun-lab-example.tex](examples/mun-lab-example.tex).
 
 
 ## Memo
@@ -78,6 +78,6 @@ Also see [mun-lab-example.tex](mun-lab-example.tex).
 [mun-memo.cls](mun-memo.cls) is a very simple memo class
 that includes a `\signatureline` command.
 Combined with [pandoc](http://pandoc.org) and
-[mun-memo-template.tex](mun-memo-template.tex), you can do quite neat things
-like generate formatted letters from Markdown files
-(see my [Makefile](Makefile#L10-12) for an example of this).
+[examples/mun-memo-template.tex](examples/mun-memo-template.tex),
+you can do neat things like generate formatted letters from Markdown files
+(see [examples/Makefile](examples/Makefile#L10-12) for an example of this).
