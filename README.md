@@ -54,6 +54,18 @@ A complete example is provided in
 [courseoutline-example.tex](courseoutline-example.tex).
 
 
+## Exam
+
+[mun-exam.cls](mun-exam.cls) is a class for mid-term tests and final exams.
+It accepts standard paper size options (e.g., `letterpaper` and `legalpaper`).
+It also accepts the `midterm` option to differentiate between mid-term tests
+and final exams.
+The former attempts to conserve space at the beginning of the exam, though it
+does include a horizontal ``points for each question'' block.
+The latter uses a full cover page with a vertical points block
+and `\cleardoublepage`.
+
+
 ## Lab
 
 [mun-lab.cls](mun-lab.cls) is a class for writing lab
