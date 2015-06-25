@@ -113,6 +113,10 @@ I use it like this:
 
 [mun-memo.cls](mun-memo.cls) is a very simple memo class
 that includes a `\signatureline` command.
+Combined with [pandoc](http://pandoc.org), you can do quite neat things
+(e.g., `pandoc --smart --standalone --latex-engine=xelatex --template=foo` to
+generate nicely-formatted letters from Markdown).
+
 An example of what I use it for:
 
 ```latex
