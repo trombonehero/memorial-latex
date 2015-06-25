@@ -327,7 +327,8 @@
       \@taphone \\
       \@taoffice
     }
-    \\[-1em]
+    \\
+    \\[-.5em]
     \head{Office Hours} & \@officehours  &              & \@tahours
 
     \\[.5em]
