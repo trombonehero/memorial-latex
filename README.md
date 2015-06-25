@@ -70,43 +70,7 @@ and `\cleardoublepage`.
 [mun-lab.cls](mun-lab.cls) is a class for writing lab
 procedures with nice headers and an `answer` environment for TA grading.
 It accepts the `answerkey` option for producing answer keys.
-I use it like this:
-
-```latex
-\documentclass[answerkey,engineering,twoside]{mun-lab}
-
-\coursename{Production of Widgets}
-\coursenumber{1000}
-
-\labnumber{0}
-\labtitle{Widget polishing}
-\labdate{10 Sep 2014}
-
-% ...
-
-\begin{document}
-\maketitle
-
-% ...
-
-
-\section{Procedure}
-
-\begin{enumerate}
-
-\item Turn on the widget polisher.
-\item Set the desired polish level to ``glossy''.
-\item ???
-\item \textbf{Question:} how many microns of widget were removed?
-	\begin{answer}
-	All of them!
-	\end{answer}
-
-\end{description}
-
-\end{document}
-```
-
+Also see [mun-lab-example.tex](mun-lab-example.tex).
 
 
 ## Memo
