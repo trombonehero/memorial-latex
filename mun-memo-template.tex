@@ -1,0 +1,28 @@
+\documentclass[$options$]{mun-memo}
+
+\usepackage{setspace}
+
+\title{$title$}
+
+$if(address)$
+\address{$address$}
+$endif$
+
+$if(returnaddress)$
+\returnaddress{$returnaddress$}
+$endif$
+
+
+\begin{document}
+\maketitle
+
+$body$
+
+\vspace{1in}
+
+\begin{tabular}{ll}
+  Signed:  &  \signatureline \\
+  Date:    &  \signatureline
+\end{tabular}
+
+\end{document}

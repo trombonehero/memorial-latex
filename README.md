@@ -113,37 +113,7 @@ I use it like this:
 
 [mun-memo.cls](mun-memo.cls) is a very simple memo class
 that includes a `\signatureline` command.
-Combined with [pandoc](http://pandoc.org), you can do quite neat things
-(e.g., `pandoc --smart --standalone --latex-engine=xelatex --template=foo` to
-generate nicely-formatted letters from Markdown).
-
-An example of what I use it for:
-
-```latex
-\documentclass[ece]{mun-memo}
-
-\usepackage{setspace}
-
-\title{Declaration of Research Support}
-
-
-\begin{document}
-\maketitle
-
-\triplespacing
-
-I, \signatureline[(supervisor)], certify that
-all necessary research equipment (including software and networking),
-materials and supplies (including chemicals), and
-other equipment and resources will be made available to the student
-to carry out the proposed research.
-
-\vspace{1in}
-
-\begin{tabular}{ll}
-  Signed:  &  \signatureline \\
-  Date:    &  \signatureline
-\end{tabular}
-
-\end{document}
-```
+Combined with [pandoc](http://pandoc.org) and
+[mun-memo-template.tex](mun-memo-template.tex), you can do quite neat things
+like generate formatted letters from Markdown files
+(see my [Makefile](Makefile#L12) for an example of this).
