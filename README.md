@@ -45,6 +45,10 @@ author's need, but is designed to be reusable by other faculties and
 departments: search for ```\if@engineering``` in
 [courseoutline.cls](courseoutline.cls).
 
+The class accepts the `safelabs` option, which disables the standard
+lab safety text (PPE, ``safe work practices'', etc.).
+I use this option for my courses, where ``the lab'' is a computer lab.
+
 A complete example is provided in
 [courseoutline-example.tex](courseoutline-example.tex).
 
