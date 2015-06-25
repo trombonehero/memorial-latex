@@ -345,13 +345,16 @@
     \ifdefined \@prereqs     \head{Prerequisite(s)}& \wide{\@prereqs}     \\ \fi
 
     \head{Schedule}
-        & Lecture     & \lecturehours   & \@lectureroom   \\
+        & Lecture     \hfill \lecturehours   & \multicolumn{2}{l}{\@lectureroom}
+        \\
 
       \if@tutorial
-        & Tutorial    & \tutorialhours  & \@tutorialroom  \\ \fi
+        & Tutorial    \hfill \tutorialhours  & \multicolumn{2}{l}{\@tutorialroom}
+      \\ \fi
 
       \if@labs
-        & Lab         & \labhours       & \@labroom       \\ \fi
+        & Lab         \hfill \labhours       & \multicolumn{2}{l}{\@labroom}
+      \\ \fi
 
     \head{Credit value} & 3 credit-hours                \\
 
