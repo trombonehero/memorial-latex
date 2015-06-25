@@ -116,4 +116,4 @@ that includes a `\signatureline` command.
 Combined with [pandoc](http://pandoc.org) and
 [mun-memo-template.tex](mun-memo-template.tex), you can do quite neat things
 like generate formatted letters from Markdown files
-(see my [Makefile](Makefile#L12) for an example of this).
+(see my [Makefile](Makefile#L10-12) for an example of this).
