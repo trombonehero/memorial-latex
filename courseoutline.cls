@@ -389,7 +389,8 @@
 \section{Academic Integrity and Professional Conduct}
 
 The Faculty of Engineering and Applied Science has a Student Code of Conduct
-which is available at \url{http://www.engr.mun.ca/policies/codeofconduct}
+pertaining to ethics and professionalism.
+It is available at \url{http://www.engr.mun.ca/policies/codeofconduct}
 and reproduced here:
 
 \begin{quotation}
