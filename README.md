@@ -69,6 +69,7 @@ and `\cleardoublepage`.
 
 [mun-lab.cls](mun-lab.cls) is a class for writing lab
 procedures with nice headers and an `answer` environment for TA grading.
+It accepts the `answerkey` option for producing answer keys.
 I use it like this:
 
 ```latex
