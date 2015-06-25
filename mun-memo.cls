@@ -118,7 +118,6 @@
 \fancyhead{}
 \fancyfoot{}
 
-\fancyhead[R] {\color{MUNClaret} \it \shortname~\@courseterm}
 \fancyfoot[C] {\color{MUNClaret} \bf \thepage}
 
 \fancypagestyle{plain}{
