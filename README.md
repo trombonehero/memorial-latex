@@ -3,6 +3,22 @@
 Here are some LaTeX bits that might be useful to instructors (or possibly
 even students) at [Memorial University of Newfoundland](http://www.mun.ca).
 
+## Common options
+
+All of the document classes below (course outline, exam, lab, memo)
+accept a few common options:
+
+`bw`
+: Use black-and-white text and logo.
+
+`engineering`
+: Use ``Faculty of Engineering and Applied Science'' under Memorial logo.
+  Implies ``ENGI'' course numbers (where applicable).
+
+`ece`
+: Use ``Department of Electrical and Computer Engineering'' under logo.
+  Implies ``ENGI'' course numbers (where applicable).
+
 
 ## Colours and fonts
 
