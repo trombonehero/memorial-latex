@@ -45,8 +45,8 @@
 
 
 %
-% Faculty- and Department-specific names and addresses.
-% Can be overridden with \department, \address and \website, but this is
+% Faculty- and Department-specific names and return addresses.
+% Can be overridden with \department, \returnaddress and \website, but this is
 % easier.
 %
 \newif\if@engineering
@@ -68,11 +68,13 @@
 
 
 %
-% Internal macros that represent key course information:
+% Internal macros with key memo information:
 %
 \newcommand{\@department}{Unknown Faculty}
-\newcommand{\@address}{Unspecified address}
+\newcommand{\@returnaddress}{Unspecified return address}
 \newcommand{\@website}{www.mun.ca}
+
+\newcommand{\@address}{no return address}
 
 
 %
@@ -80,7 +82,7 @@
 %
 \if@engineering
   \renewcommand{\@department}{Faculty of Engineering and Applied Science}
-  \renewcommand{\@address}{
+  \renewcommand{\@returnaddress}{
     St. John's, NL~~Canada~~A1B~3X5 \\
     Tel: 709~864~8812~Fax: 709~864~4042
   }
@@ -89,7 +91,7 @@
 
 \if@ece
   \renewcommand{\@department}{Department of Electrical and Computer Engineering}
-  \renewcommand{\@address}{
+  \renewcommand{\@returnaddress}{
     Faculty of Engineering and Applied Science \\
     St. John's, NL~~~Canada~~~A1B~3X5 \\
     Tel: 709~864~8177~~~~Fax: 709~864~4042
@@ -100,8 +102,9 @@
 
 
 \newcommand{\department}[1]{\renewcommand{\@department}{#1}}
-\newcommand{\address}[1]{\renewcommand{\@address}{#1}}
+\newcommand{\returnaddress}[1]{\renewcommand{\@returnaddress}{#1}}
 \newcommand{\website}[1]{\renewcommand{\@website}{#1}}
+\newcommand{\address}[1]{\renewcommand{\@address}{#1}}
 
 
 %
@@ -185,14 +188,22 @@
       \parbox{\textwidth}{
         \sf
         \fontsize{8pt}{10.25pt}\selectfont
-        \@address
+        \@returnaddress
         \\
         {\color{MUNClaret} \@website}
       }
     }
   }
 
-  \vspace{.5in}
+  \vspace{.5em}
+
+  \@date
+
+  \vspace{.5em}
+
+  \@address
+
+  \vspace{.25in}
 
   \begin{center}
     {\MakeUppercase{\@title}}
