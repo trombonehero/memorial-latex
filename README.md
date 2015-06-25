@@ -45,11 +45,6 @@ author's need, but is designed to be reusable by other faculties and
 departments: search for ```\if@engineering``` in
 [courseoutline.cls](courseoutline.cls).
 
-This template requires the ```mathdesign``` package and ```urw-garamond```
-fonts, neither of which is part of the default TeXLive installation.
-See [mathdesign on CTAN](http://www.ctan.org/tex-archive/fonts/mathdesign/)
-for details on installing the fonts and package.
-
 A complete example is provided in
 [courseoutline-example.tex](courseoutline-example.tex).
 
