@@ -1,0 +1,174 @@
+\documentclass[ece,answers,bw,legalpaper]{mun-exam}
+
+\coursenumber{1000}
+\coursename{Exam Writing}
+\examdate{41 Jan 2090}
+\instructions{
+\begin{enumerate}
+  \item This is a closed-book exam: written aids are not permitted.
+  \item Calculators, phones and all other electronic aids are forbidden.
+\end{enumerate}
+}
+
+\lstset{
+	aboveskip=1.5em,
+	belowskip=1.5em,
+	frame = single,
+	basicstyle = \ttfamily,
+	showspaces = false,
+	showtabs = false,
+	showstringspaces = false,
+}
+
+\ifblackandwhite
+\lstset{
+	keywordstyle = \bf \ttfamily,
+}
+\else
+\lstset{
+	backgroundcolor = \color{Ivory},
+	keywordstyle = \color{OliveGreen},
+	commentstyle = \color{blue},
+	stringstyle = \color{Purple},
+}
+\fi
+
+\lstdefinestyle{console}{numbers = none}%, backgroundcolor = \color{Gainsboro}}
+
+\ifblackandwhite
+\else
+\lstdefinestyle{console}{numbers = none, backgroundcolor = \color{Gainsboro}}
+\fi
+
+\lstdefinelanguage{shell}{
+}
+
+\newcommand{\cpp}[1]{\lstinline[language=C++]{#1}}
+\newcommand{\file}[1]{\lstinline{#1}}
+\newcommand{\shell}[1]{\lstinline[language=shell]{#1}}
+
+
+
+\begin{document}
+
+\maketitle
+
+\begin{questions}
+
+\fullwidth{\section*{In which questions varied and sundry are asked}}
+
+\question Explain the differences between: \droptotalpoints
+
+\begin{parts}
+
+  \part[2] Pointers vs references
+  \begin{solutionordottedlines}[4em]
+    A pointer is a number, a location in memory, so it must be
+    \textit{dereferenced} to access a value.
+    A reference can be treated just like the thing it references.
+  \end{solutionordottedlines}
+
+  \part[2] \cpp{static_cast} vs \cpp{dynamic_cast}
+  \begin{solutionordottedlines}[4em]
+    The compiler has all information required to do a \cpp{static_cast}
+    at compiler time, whereas a \cpp{dynamic_cast} requires run-time information.
+  \end{solutionordottedlines}
+
+\end{parts}
+
+
+\vspace{1em}
+\question Define the following terms. \droptotalpoints
+
+\begin{parts}
+
+  \part[2] Expression
+  \begin{solutionordottedlines}[4em]
+    Something that can be evaluated
+  \end{solutionordottedlines}
+
+  \part[2] Abstract class
+  \begin{solutionordottedlines}[4em]
+    A class with at least one unimplemented method
+  \end{solutionordottedlines}
+
+\end{parts}
+
+
+\fullwidth{\section*{In which the student is subjected to further examination}}
+
+\question What is the correct C++ syntax for: \droptotalpoints
+
+\begin{parts}
+
+  \part[1] Declaring a move assignment operator within class \cpp{Foo}?
+  \begin{checkboxes}
+    \choice \cpp{operator = (Foo&);}
+    \choice \cpp{operator = (const Foo&);}
+    \CorrectChoice \cpp{operator = (Foo&&);}
+    \choice \cpp{operator = (const Foo&&);}
+  \end{checkboxes}
+
+  \part[1] Creating a subclass of \cpp{class Parent}?
+  \begin{checkboxes}
+    \CorrectChoice \lstinline[language=C++]|class Child : public Parent {};|
+    \choice \lstinline[language=C++]|class Child : override Parent {};|
+    \choice \lstinline[language=C++]|class Child : subclass Parent {};|
+    \choice \lstinline[language=C++]|class Child : virtual Parent {};|
+  \end{checkboxes}
+
+  \part[1] Defining a lambda function that increments an integer parameter?
+  \begin{checkboxes}
+    \choice \lstinline[language=C++]|[]() { return x + 1; }|
+    \choice \lstinline[language=C++]|[x]() { return x + 1; }|
+    \choice \lstinline[language=C++]|[x](int x) { return x + 1; }|
+    \CorrectChoice \lstinline[language=C++]|[](int x) { return x + 1; }|
+  \end{checkboxes}
+
+\end{parts}
+
+\vspace{1em}   % TODO: increase pre-question spacing automatically
+
+\question What is invalid about each of the following?
+          How could you fix it? \droptotalpoints
+
+\begin{parts}
+  \part[2]
+    Casting a \cpp{Car*} to a \cpp{Subaru*}:
+
+    \begin{lstlisting}[language=C++]
+class Car { /* ... */ };
+class Subaru : public Car { /* ... */ };
+Car *car = /* ... */;
+Subaru *s = car;
+    \end{lstlisting}
+    \begin{solutionordottedlines}[4em]
+      The \cpp{Car} might not be a \cpp{Subaru}.
+      Use \cpp{dynamic_cast} to check.
+    \end{solutionordottedlines}
+
+\end{parts}
+
+
+\pagebreak
+
+
+\fullwidth{\section*{Bonus questions}}
+
+\bonusquestion
+
+\begin{parts}
+  \bonuspart[1]
+    What is the simplest possible lambda function?
+
+  \begin{solutionordottedlines}[2em]
+    \lstinline[language=C++]|[](){}|
+  \end{solutionordottedlines}
+
+\end{parts}
+
+\end{questions}
+
+
+\end{document}
+
