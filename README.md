@@ -74,17 +74,12 @@ I use it like this:
 ```latex
 \documentclass[answerkey,engineering,twoside]{mun-lab}
 
-\coursename{Advanced Programming}
-\coursenumber{3891}
+\coursename{Production of Widgets}
+\coursenumber{1000}
 
 \labnumber{0}
-\labtitle{Version control}
+\labtitle{Widget polishing}
 \labdate{10 Sep 2014}
-
-\usepackage{listings}
-
-\usepackage{tikz}
-\usetikzlibrary{calc}
 
 % ...
 
@@ -96,26 +91,14 @@ I use it like this:
 
 \section{Procedure}
 
-\newcommand{\partner}[2]{\item[Partner #1] \hfill \\ #2}
+\begin{enumerate}
 
-As a pair of lab partners, follow the instructions given below.
-You may work on the same computer or separate computers, but follow the
-instructions together, in order: you both need to observe each other's work.
-Whenever you encounter the text \lstinline{<<output>>} in the instructions,
-make a note of the program output you see on the console.
-These workings should go in your lab report.
-
-\begin{description}
-
-	\partner{A}{Check out your assigned Subversion repository.}
-\begin{lstlisting}[style=console]
-...
-\end{lstlisting}
-
+\item Turn on the widget polisher.
+\item Set the desired polish level to ``glossy''.
+\item ???
+\item \textbf{Question:} how many microns of widget were removed?
 	\begin{answer}
-\begin{lstlisting}[style=console]
-Checked out revision 0.
-\end{lstlisting}
+	All of them!
 	\end{answer}
 
 \end{description}
