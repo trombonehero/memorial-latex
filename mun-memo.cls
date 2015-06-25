@@ -31,7 +31,7 @@
 
 
 % Use the basic article structure.
-\LoadClass[12pt]{article}
+\LoadClass[12pt,letter]{article}
 
 \RequirePackage{mun-fonts}
 \RequirePackage{mun-colour}
@@ -40,6 +40,7 @@
 \RequirePackage[top=0.5in]{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{hyperref}
+\RequirePackage{setspace}
 \RequirePackage{tabularx}
 \RequirePackage{titlesec}
 
@@ -131,6 +132,7 @@
 % No paragraph indentation:
 %
 \setlength{\parindent}{0cm}
+\setlength{\parskip}{1em}
 
 
 %
@@ -149,20 +151,21 @@
 
 
 \newcommand{\signatureline}[1][]{
-  \parbox{2.1in}{
+  \parbox{2.6in}{
     \centering
 
     \ifx\\#1\\
-      \vspace{1em}
-    \else
       \vspace{2em}
+    \else
+      \vspace{4em}
     \fi
 
-    \rule{2in}{1pt}
+    \rule{2.5in}{1pt}
 
     \ifx\\#1\\
     \else
-      \vspace{-1.8em}
+      \vspace{2em}
+      \vspace{-\baselineskip}
       #1
     \fi
   }
@@ -206,7 +209,9 @@
   \vspace{.25in}
 
   \begin{center}
-    {\MakeUppercase{\@title}}
+    {
+      \@title
+    }
   \end{center}
 
   \vspace{.25in}
