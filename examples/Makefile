@@ -1,6 +1,10 @@
 .SUFFIXES: .md .pdf .tex
 
-all: courseoutline-example.pdf mun-exam-example.pdf mun-memo-example.pdf
+all: \
+	courseoutline-example.pdf \
+	mun-exam-example.pdf \
+	mun-memo-example.pdf \
+	mun-lab-example.pdf
 
 clean:
 	rm -f *.pdf
