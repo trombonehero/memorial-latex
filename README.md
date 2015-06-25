@@ -12,12 +12,12 @@ accept a few common options:
 : Use black-and-white text and logo.
 
 `engineering`
-: Use ``Faculty of Engineering and Applied Science'' under Memorial logo.
-  Implies ``ENGI'' course numbers (where applicable).
+: Use "Faculty of Engineering and Applied Science" under Memorial logo.
+  Implies "ENGI" course numbers (where applicable).
 
 `ece`
-: Use ``Department of Electrical and Computer Engineering'' under logo.
-  Implies ``ENGI'' course numbers (where applicable).
+: Use "Department of Electrical and Computer Engineering" under logo.
+  Implies "ENGI" course numbers (where applicable).
 
 
 ## Colours and fonts
@@ -42,12 +42,12 @@ is a class for course outlines as required by
 [section 6.6 of Memorial's Calendar](http://www.mun.ca/regoff/calendar/sectionNo=REGS-0601).
 It is currently targeted at Engineering courses, according to the original
 author's need, but is designed to be reusable by other faculties and
-departments: search for ```\if@engineering``` in
+departments: search for `\if@engineering` in
 [courseoutline.cls](courseoutline.cls).
 
 The class accepts the `safelabs` option, which disables the standard
-lab safety text (PPE, ``safe work practices'', etc.).
-I use this option for my courses, where ``the lab'' is a computer lab.
+lab safety text (PPE, "safe work practices", etc.).
+I use this option for my courses, where "the lab" is a computer lab.
 
 A complete example is provided in
 [courseoutline-example.tex](courseoutline-example.tex).
@@ -60,7 +60,7 @@ It accepts standard paper size options (e.g., `letterpaper` and `legalpaper`).
 It also accepts the `midterm` option to differentiate between mid-term tests
 and final exams.
 The former attempts to conserve space at the beginning of the exam, though it
-does include a horizontal ``points for each question'' block.
+does include a horizontal "points for each question" block.
 The latter uses a full cover page with a vertical points block
 and `\cleardoublepage`.
 
