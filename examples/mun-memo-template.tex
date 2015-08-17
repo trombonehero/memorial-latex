@@ -3,6 +3,7 @@
 \usepackage{setspace}
 
 \title{$title$}
+\author{$author$}
 
 $if(address)$
 \address{$address$}
@@ -12,17 +13,13 @@ $if(returnaddress)$
 \returnaddress{$returnaddress$}
 $endif$
 
+$if(closing)$
+\closing{$closing$}
+$endif$
 
 \begin{document}
 \maketitle
 
 $body$
-
-\vspace{1in}
-
-\begin{tabular}{ll}
-  Signed:  &  \signatureline \\
-  Date:    &  \signatureline
-\end{tabular}
 
 \end{document}

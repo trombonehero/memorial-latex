@@ -36,8 +36,9 @@
 \RequirePackage{mun-fonts}
 \RequirePackage{mun-colour}
 
+\RequirePackage{etoolbox}
 \RequirePackage{fancyhdr}
-\RequirePackage[top=0.5in]{geometry}
+\RequirePackage[top=0.5in,bottom=0.5in]{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{hyperref}
 \RequirePackage{setspace}
@@ -58,6 +59,14 @@
 \@ecefalse
 \DeclareOption{ece}{\@ecetrue}
 
+%
+% We can use a conventional letter-style closing or a signature block
+% as is expected on certain documents (e.g., declarations of research support).
+%
+\newif\if@signatureblock
+\@signatureblockfalse
+\DeclareOption{signatureblock}{\@signatureblocktrue}
+
 
 %
 % Pass the remaining options to 'article'.
@@ -75,7 +84,7 @@
 \newcommand{\@returnaddress}{Unspecified return address}
 \newcommand{\@website}{www.mun.ca}
 
-\newcommand{\@address}{no return address}
+\newcommand{\@address}{}
 
 
 %
@@ -109,6 +118,13 @@
 
 
 %
+% Closing defaults to 'Sincerely'.
+%
+\newcommand{\@closing}{Sincerely}
+\newcommand{\closing}[1]{\renewcommand{\@closing}{#1}}
+
+
+%
 % Page headers:
 %
 \pagestyle{fancy}
@@ -118,12 +134,12 @@
 \fancyhead{}
 \fancyfoot{}
 
-\fancyfoot[C] {\color{MUNClaret} \bf \thepage}
+%\fancyfoot[C] {\color{MUNClaret} \bf \thepage}
 
 \fancypagestyle{plain}{
 \setlength{\headheight}{.25in}
 \fancyhead {}
-\fancyfoot[C] {\color{MUNClaret} \bf \thepage}
+%\fancyfoot[C] {\color{MUNClaret} \bf \thepage}
 }
 
 
@@ -171,6 +187,13 @@
 }
 
 
+\newcommand{\signatureblock}[1]{
+  #1,
+  \\[4em]
+  \@author
+}
+
+
 
 %
 % Customised title:
@@ -199,21 +222,42 @@
 
   \vspace{.5em}
 
-  \@date
+  \if@signatureblock
+  \else
+    \@date
+  \fi
 
   \vspace{.5em}
 
   \@address
 
-  \vspace{.25in}
+  \ifdefempty{\@title}{}{
+    \vspace{.25in}
 
-  \begin{center}
-    {
-      \@title
-    }
-  \end{center}
+    \begin{center}
+      {
+        \@title
+      }
+    \end{center}
 
+    \vspace{.25in}
+  }
+}
+
+
+%
+% Customised signature section:
+%
+\AtEndDocument{
   \vspace{.25in}
+  \if@signatureblock
+    \begin{tabular}{ll}
+      Signed:  &  \signatureline \\
+      Date:    &  \signatureline
+    \end{tabular}
+  \else
+    \@closing,
+  \fi
 }
 
 
