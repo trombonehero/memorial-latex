@@ -228,6 +228,8 @@
   \@labstrue
 }
 
+\newcommand{\labhours}[1]{\newcommand\@labhours{#1}}
+
 \newcommand{\textbook}[1]{\renewcommand\@textbook{#1}}
 \newcommand{\references}[1]{\renewcommand\@references{#1}}
 
@@ -238,17 +240,17 @@
 \newcommand{\nameandnumber}{\@shortfaculty~\@coursenumber}
 \newcommand{\shortname}{\nameandnumber:~\@coursename}
 
-\newcommand{\lecturehours}{
+\newcommand{\lecturetimes}{
   \@lecturedays~\@lecturestart--\@lecturefinish
 }
 
-\newcommand{\tutorialhours}{
+\newcommand{\tutorialtimes}{
   \ifdefined\@tutorialdays
     \@tutorialdays~\@tutorialstart--\@tutorialfinish
   \fi
 }
 
-\newcommand{\labhours}{
+\newcommand{\labtimes}{
   \ifdefined\@labdays
     \@labdays~\@labstart--\@labfinish
   \fi
@@ -345,18 +347,22 @@
     \ifdefined \@prereqs     \head{Prerequisite(s)}& \wide{\@prereqs}     \\ \fi
 
     \head{Schedule}
-        & Lecture     \hfill \lecturehours   & \multicolumn{2}{l}{\@lectureroom}
+        & Lecture     \hfill \lecturetimes   & \multicolumn{2}{l}{\@lectureroom}
         \\
 
       \if@tutorial
-        & Tutorial    \hfill \tutorialhours  & \multicolumn{2}{l}{\@tutorialroom}
+        & Tutorial    \hfill \tutorialtimes  & \multicolumn{2}{l}{\@tutorialroom}
       \\ \fi
 
       \if@labs
-        & Lab         \hfill \labhours       & \multicolumn{2}{l}{\@labroom}
+        & Lab         \hfill \labtimes       & \multicolumn{2}{l}{\@labroom}
       \\ \fi
 
     \head{Credit value} & 3 credit-hours                \\
+
+    \ifdefined \@labhours
+      \head{Lab hours}  & \multicolumn{3}{l}{\@labhours}    \\
+    \fi
 
     \head{Textbook}
       & \multicolumn{3}{l}{\parbox[t]{5.5in}{\@textbook}}   \\
@@ -442,7 +448,7 @@ faculty advisors.
 \if@safelabs
 % The 'safelabs' option was passed to the class, elide the Lab Safety statement.
 \else
-\ifdefined\@labhours
+\ifdefined\@labtimes
 \section{Lab Safety}
 Students are expected to demonstrate awareness
 of, and personal accountability for, safe laboratory conduct. Appropriate
