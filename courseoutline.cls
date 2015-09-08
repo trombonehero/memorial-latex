@@ -325,12 +325,7 @@
       \@office
     }
     & \head{\@talabel}
-    & \parbox[t]{2in}{
-      \@ta \\
-      \@tamail \\
-      \@taphone \\
-      \@taoffice
-    }
+    & \parbox[t][][t]{2in}{\@ta}
     \\
     \\[-.5em]
     \head{Office Hours} & \@officehours  &              & \@tahours
