@@ -231,6 +231,7 @@
 
 \newcommand{\credithours}[1]{\renewcommand\@credithours{#1}}
 \newcommand{\labhours}[1]{\newcommand\@labhours{#1}}
+\newcommand{\otherrequirements}[1]{\newcommand\@otherrequirements{#1}}
 
 \newcommand{\textbook}[1]{\renewcommand\@textbook{#1}}
 \newcommand{\references}[1]{\renewcommand\@references{#1}}
@@ -358,6 +359,10 @@
 
     \ifdefined \@labhours
       \head{Lab hours}  & \multicolumn{3}{l}{\@labhours}    \\
+    \fi
+
+    \ifdefined \@otherrequirements
+      \head{Other req.} & \multicolumn{3}{l}{\@otherrequirements}    \\
     \fi
 
     \head{Textbook}
