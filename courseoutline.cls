@@ -200,7 +200,6 @@
 \newcommand{\website}[1]{\newcommand\@website{#1}}
 \newcommand{\communication}[1]{\newcommand\@othercomms{#1}}
 \newcommand{\officialdescription}[1]{\renewcommand\@calendar{#1}}
-\newcommand{\fulldescription}[1]{\newcommand\@description{#1}}
 \newcommand{\prerequisites}[1]{\newcommand\@prereqs{#1}}
 
 \newcommand{\lecture}[4]{
@@ -343,7 +342,6 @@
     \ifdefined \@othercomms  \head{Communication}  & \wide{\@othercomms}  \\ \fi
     \\[-.75em]
                              \head{Calendar entry} & \wide{\@calendar}    \\
-    \ifdefined \@description \head{Description}    & \wide{\@description} \\ \fi
     \ifdefined \@prereqs     \head{Prerequisite(s)}& \wide{\@prereqs}     \\ \fi
 
     \head{Schedule}
