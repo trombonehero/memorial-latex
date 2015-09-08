@@ -286,14 +286,14 @@
 % No paragraph indentation:
 %
 \setlength{\parindent}{0cm}
+\setlength{\parskip}{.5em}
 
 
 %
 % Customised title:
 %
-\renewcommand{\arraystretch}{1}
 \newcommand{\head}[1]{\textbf{\headercolour #1}}
-\newcommand{\wide}[1]{\multicolumn{3}{p{0.85 \hsize}}{#1}}
+\newcommand{\wide}[1]{\multicolumn{3}{p{0.8 \hsize}}{#1}}
 
 \renewcommand{\maketitle}
 {
@@ -376,13 +376,15 @@
     \head{References}
       & \multicolumn{3}{l}{\parbox[t]{5.5in}{\@references}} \\
   \end{tabularx}
+
+  \renewcommand{\arraystretch}{1.25}
 }
 
 
 %
 % Section, etc. headings:
 %
-\titlespacing{\section}{0pt}{2em}{.75em}
+\titlespacing{\section}{0pt}{.5em}{0pt}
 \titlespacing{\subsection}{0pt}{1em}{0.25em}
 \titlespacing{\subsubsection}{0pt}{0.5em}{0em}
 
