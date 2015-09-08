@@ -166,6 +166,8 @@
 \newcommand{\@lecturefinish}{Y:00}
 \newcommand{\@lectureroom}{EN-XXXX}
 
+\newcommand{\@credithours}{3}
+
 \newif\if@tutorial
 \@tutorialfalse
 
@@ -227,6 +229,7 @@
   \@labstrue
 }
 
+\newcommand{\credithours}[1]{\renewcommand\@credithours{#1}}
 \newcommand{\labhours}[1]{\newcommand\@labhours{#1}}
 
 \newcommand{\textbook}[1]{\renewcommand\@textbook{#1}}
@@ -356,7 +359,7 @@
         & Lab         \hfill \labtimes       & \multicolumn{2}{l}{\@labroom}
       \\ \fi
 
-    \head{Credit value} & 3 credit-hours                \\
+    \head{Credit value} & \@credithours~credit-hours        \\
 
     \ifdefined \@labhours
       \head{Lab hours}  & \multicolumn{3}{l}{\@labhours}    \\
