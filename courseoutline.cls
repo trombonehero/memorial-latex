@@ -229,6 +229,8 @@
   \@labstrue
 }
 
+\newcommand{\acceditationunits}[1]{\newcommand\@aus{#1}}
+
 \newcommand{\credithours}[1]{\renewcommand\@credithours{#1}}
 \newcommand{\labhours}[1]{\newcommand\@labhours{#1}}
 \newcommand{\otherrequirements}[1]{\newcommand\@otherrequirements{#1}}
@@ -356,6 +358,10 @@
       \\ \fi
 
     \head{Credit value} & \@credithours~credit-hours        \\
+
+    \ifdefined \@aus
+      \head{Accreditation units} & \wide{\@aus}\\
+    \fi
 
     \ifdefined \@labhours
       \head{Lab hours}  & \multicolumn{3}{l}{\@labhours}    \\
