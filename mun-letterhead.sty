@@ -1,0 +1,75 @@
+\RequirePackage{mun-colour}
+\RequirePackage{mun-fonts}
+
+
+%
+% Faculty- and Department-specific names and return addresses.
+% Can be overridden with \faculty, \returnaddress and \website, but this is
+% easier.
+%
+\newif\if@engineering
+\@engineeringfalse
+\DeclareOption{engineering}{\@engineeringtrue}
+
+\newif\if@ece
+\@ecefalse
+\DeclareOption{ece}{\@ecetrue}
+
+\ProcessOptions\relax
+
+
+%
+% Internal macros with key memo information:
+%
+\newcommand{\@faculty}{Unknown Faculty}
+\newcommand{\@returnaddress}{Unspecified return address}
+\newcommand{\@website}{https://www.mun.ca}
+
+
+
+%
+% Faculty- and Department-specific information (can still be overridden):
+%
+\if@engineering
+  \renewcommand{\@faculty}{Faculty of Engineering and Applied Science}
+  \renewcommand{\@returnaddress}{
+    St. John's, NL~~Canada~~A1B~3X5 \\
+    Tel: 709~864~8812~Fax: 709~864~4042
+  }
+  \renewcommand{\@website}{https://www.mun.ca/engineering}
+\fi
+
+\if@ece
+  \renewcommand{\@faculty}{Faculty of Engineering and Applied Science}
+  \renewcommand{\@returnaddress}{
+    Department of Electrical and Computer Engineering \\
+    St. John's, NL~~~Canada~~~A1B~3X5 \\
+    Tel: 709~864~8177~~~~Fax: 709~864~4042
+  }
+  \renewcommand{\@website}{https://www.mun.ca/engineering/ece}
+\fi
+
+
+\newcommand{\letterhead}{
+  \parbox{4in}{
+    \includegraphics[width=0.875in]{memorial}
+
+    \vspace{6pt}
+
+    \hspace{1pt}
+    \textcolor{MUNGrey}{\fontsize{10pt}{12pt}\selectfont \bf \@faculty}
+
+    \vspace{6pt}
+
+    \hspace{2pt}
+    \parbox{\textwidth}{
+      \sf
+      \fontsize{8pt}{10.25pt}\selectfont
+      \textcolor{MUNGrey}{\@returnaddress}
+      \\
+      \textcolor{MUNClaret}{\@website}
+    }
+
+    \vspace{12pt}
+  }
+}
