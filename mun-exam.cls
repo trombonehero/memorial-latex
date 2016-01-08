@@ -77,6 +77,7 @@
 \RequirePackage{ifthen}
 \RequirePackage{listings}
 \RequirePackage[framemethod=tikz]{mdframed}
+\RequirePackageWithOptions{mun-letterhead}
 \RequirePackage{parskip}
 \RequirePackage{setspace}
 \RequirePackage{tabularx}
@@ -85,23 +86,6 @@
 
 \makeatletter
 
-
-%
-% Internal macros that represent key course information:
-%
-\newcommand{\@faculty}{Unknown Faculty}
-\newcommand{\@shortfaculty}{Unknown}
-
-\if@engineering
-\renewcommand{\@faculty}{Faculty of Engineering and Applied Science}
-\renewcommand{\@shortfaculty}{Engineering}
-\fi
-
-\if@ece
-\newcommand{\@department}{Department of Electrical and Computer Engineering}
-\renewcommand{\@faculty}{Faculty of Engineering and Applied Science}
-\renewcommand{\@shortfaculty}{Engineering}
-\fi
 
 \newcommand{\@courseprefix}{ENGI}
 \newcommand{\@coursename}{Short Name}
@@ -179,21 +163,10 @@
 
 \renewcommand{\maketitle}
 {
-  \pagestyle{empty}
+  \thispagestyle{empty}
 
   \mbox{
-    \parbox{3.25in}{
-      \ifblackandwhite
-      \includegraphics[width=1.1in]{memorial-bw} \vspace{6pt}
-      \else
-      \includegraphics[width=1.1in]{memorial} \vspace{6pt}
-      \fi
-      \\
-      \ifthenelse{\isundefined{\@department}}
-      {}
-      {\neutralcolour \hspace{5pt}\@department \\}
-      {\neutralcolour \bf \hspace{5pt}\@faculty}
-    }
+    \parbox{3.25in}{\letterhead}
     \parbox{2.5in}{
       \neutralcolour
       \textbf{\@courseprefix \@coursenumber:} \@coursename \\
@@ -241,7 +214,6 @@
   \fi
 
   \cleardoublepage
-  \pagestyle{fancy}
   \setcounter{page}{1}
 }
 
