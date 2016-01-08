@@ -403,25 +403,19 @@
 \if@engineering
 \section{Academic Integrity and Professional Conduct}
 
-The Faculty of Engineering and Applied Science has a Student Code of Conduct
-pertaining to ethics and professionalism.
-It is available at \url{http://www.engr.mun.ca/policies/codeofconduct}
-and reproduced here:
+Students are expected to conduct themselves in all aspects of the course at the
+highest level of academic integrity.
+Any student found to commit academic misconduct will be dealt with according
+to the Faculty and University practices.
+More information is available at
+\url{http://www.mun.ca/engineering/undergrad/academicintegrity.php}.
 
-\begin{quotation}
-Like Professional Engineers, engineering students are expected to behave in a
-professional manner at all times. Students are encouraged to conduct
-themselves in a manner consistent with the PEG-NL Code of Ethics.
+Students are encouraged to consult the Faculty of Engineering and Applied
+Science Student Code of Conduct at
+\url{http://www.mun.ca/engineering/undergrad/academicintegrity.php}
+and Memorial University's Code of Student Conduct at
+\url{http://www.mun.ca/student/conduct}.
 
-Memorial University has two sets of rules which deal with inappropriate
-behavior by students. The first set deals with academic offences such as
-cheating while the other set deals with non academic offences such as
-disruptive behavior in class.
-
-Both sets of rules can be found in the University Calendar under Regulations.
-It is strongly recommended that students read and follow these rules because
-the penalties can be severe, the severest being expulsion from the University.
-\end{quotation}
 \else
 \section{Academic Integrity}
 Students are reminded of the Memorial University of Newfoundland Code,
