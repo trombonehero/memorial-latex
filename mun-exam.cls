@@ -119,8 +119,10 @@
 %
 % Header/footer formatting
 %
-\setlength{\headsep}{.5em}
-\rhead{Student ID: \rule[-3pt]{1.5in}{.5pt}}
+\pagestyle{fancy}
+
+\setlength{\headsep}{1em}
+\fancyhead[RO]{Student ID: \rule[-3pt]{1.5in}{.5pt}}
 
 \raggedbottom
 
