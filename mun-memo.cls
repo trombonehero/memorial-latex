@@ -33,8 +33,9 @@
 % Use the basic article structure.
 \LoadClass[12pt,letter]{article}
 
-\RequirePackage{mun-fonts}
 \RequirePackage{mun-colour}
+\RequirePackage{mun-fonts}
+\RequirePackageWithOptions{mun-letterhead}
 
 \RequirePackage{etoolbox}
 \RequirePackage{fancyhdr}
@@ -46,18 +47,18 @@
 \RequirePackage{titlesec}
 
 
-%
-% Faculty- and Department-specific names and return addresses.
-% Can be overridden with \department, \returnaddress and \website, but this is
-% easier.
-%
-\newif\if@engineering
-\@engineeringfalse
-\DeclareOption{engineering}{\@engineeringtrue}
-
 \newif\if@ece
 \@ecefalse
 \DeclareOption{ece}{\@ecetrue}
+
+\newif\if@midterm
+\newif\if@final
+
+\@midtermfalse
+\@finaltrue
+
+\DeclareOption{midterm}{\@midtermtrue \@finalfalse}
+
 
 %
 % We can use a conventional letter-style closing or a signature block
@@ -77,45 +78,8 @@
 \makeatletter
 
 
-%
-% Internal macros with key memo information:
-%
-\newcommand{\@department}{Unknown Faculty}
-\newcommand{\@returnaddress}{Unspecified return address}
-\newcommand{\@website}{www.mun.ca}
-
 \newcommand{\@address}{}
-
-
-%
-% Faculty- and Department-specific information (can still be overridden):
-%
-\if@engineering
-  \renewcommand{\@department}{Faculty of Engineering and Applied Science}
-  \renewcommand{\@returnaddress}{
-    St. John's, NL~~Canada~~A1B~3X5 \\
-    Tel: 709~864~8812~Fax: 709~864~4042
-  }
-  \renewcommand{\@website}{www.engr.mun.ca}
-\fi
-
-\if@ece
-  \renewcommand{\@department}{Department of Electrical and Computer Engineering}
-  \renewcommand{\@returnaddress}{
-    Faculty of Engineering and Applied Science \\
-    St. John's, NL~~~Canada~~~A1B~3X5 \\
-    Tel: 709~864~8177~~~~Fax: 709~864~4042
-  }
-  \renewcommand{\@website}{www.engr.mun.ca}
-\fi
-
-
-
-\newcommand{\department}[1]{\renewcommand{\@department}{#1}}
-\newcommand{\returnaddress}[1]{\renewcommand{\@returnaddress}{#1}}
-\newcommand{\website}[1]{\renewcommand{\@website}{#1}}
 \newcommand{\address}[1]{\renewcommand{\@address}{#1}}
-
 
 %
 % Closing defaults to 'Sincerely'.
@@ -202,23 +166,7 @@
 {
   \thispagestyle{plain}
 
-  \includegraphics[width=0.875in]{memorial} \vspace{6pt} \\
-  \textcolor{MUNGrey}{
-    \hspace{4pt}{\fontsize{10pt}{12pt}\selectfont \bf \@department}
-    \\
-    \vspace{1pt}
-    \\
-    \mbox{
-      \hspace{-2pt}
-      \parbox{\textwidth}{
-        \sf
-        \fontsize{8pt}{10.25pt}\selectfont
-        \@returnaddress
-        \\
-        {\color{MUNClaret} \@website}
-      }
-    }
-  }
+  \letterhead
 
   \vspace{.5em}
 
