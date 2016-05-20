@@ -9,7 +9,13 @@
 \usepackage{setspace}
 
 \title{$title$}
+
+$if(author)$
 \author{$author$}
+$else$
+\author{}
+\closing{}
+$endif$
 
 $if(address)$
 \address{$address$}
