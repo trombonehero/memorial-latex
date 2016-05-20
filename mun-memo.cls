@@ -86,7 +86,7 @@
 %
 % Closing defaults to 'Sincerely'.
 %
-\newcommand{\@closing}{Sincerely}
+\newcommand{\@closing}{Sincerely,}
 \newcommand{\closing}[1]{\renewcommand{\@closing}{#1}}
 
 
@@ -200,7 +200,11 @@
       Date:    &  \signatureline
     \end{tabular}
   \else
-    \@closing,
+    \@closing
+
+    \vspace{.25in}
+
+    \@author
   \fi
 }
 
