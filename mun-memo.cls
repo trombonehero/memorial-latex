@@ -39,7 +39,7 @@
 
 \RequirePackage{etoolbox}
 \RequirePackage{fancyhdr}
-\RequirePackage[top=0.5in,bottom=0.5in]{geometry}
+\RequirePackage[top=0.5in,bottom=1in]{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{hyperref}
 \RequirePackage{setspace}
@@ -111,7 +111,7 @@
 % No paragraph indentation:
 %
 \setlength{\parindent}{0cm}
-\setlength{\parskip}{1em}
+\setlength{\parskip}{.5em}
 
 
 %
@@ -206,8 +206,8 @@
 %
 % Section, etc. headings:
 %
-\titlespacing{\section}{0pt}{2em}{.75em}
-\titlespacing{\subsection}{0pt}{1em}{0.25em}
+\titlespacing{\section}{0pt}{.5em}{.25em}
+\titlespacing{\subsection}{0pt}{.5em}{0.25em}
 \titlespacing{\subsubsection}{0pt}{0.5em}{0em}
 
 \titleformat{name=\section}{\Large \bf \color{MUNClaret}}{\thesection}{.5em}{}
