@@ -37,9 +37,12 @@
 \RequirePackage{mun-fonts}
 \RequirePackage{mun-letterhead}
 
+\RequirePackage{amssymb}
 \RequirePackage{booktabs}
 \RequirePackage{etoolbox}
+\RequirePackage{enumitem}
 \RequirePackage{fancyhdr}
+\RequirePackage{framed}
 \RequirePackage[top=0.5in,bottom=1in]{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{hyperref}
