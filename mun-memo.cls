@@ -35,7 +35,7 @@
 
 \RequirePackage{mun-colour}
 \RequirePackage{mun-fonts}
-\RequirePackageWithOptions{mun-letterhead}
+\RequirePackage{mun-letterhead}
 
 \RequirePackage{etoolbox}
 \RequirePackage{fancyhdr}
