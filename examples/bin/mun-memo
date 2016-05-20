@@ -1,0 +1,85 @@
+#!/bin/sh
+
+#
+# User-visible options:
+#
+#   --preview (command-line argument, optional, must come before filename)
+#   markdown file (command-line argument, required)
+#   template (optional environment variable, defaults to mun-memo-template.tex)
+#
+if [ "$1" == "--preview" ]
+then
+	preview_mode="true"
+	shift
+fi
+
+markdown=$1
+
+: ${template:="mun-memo-template.tex"}
+
+if [ "${markdown}" = "" ]
+then
+	echo "Usage:   mun-memo <markdown file>"
+	exit 1
+fi
+
+missing_tool()
+{
+	echo "The $1 tool is missing from your system. Have you installed it?"
+	exit 1
+}
+
+which pandoc > /dev/null || missing_tool pandoc
+which latexmk > /dev/null || missing_tool "latexmk (included with TeXLive)"
+
+
+: ${tmpdir:="`mktemp -d -t mun-memo`"}
+
+basename="${markdown%.*}"
+tex_file=${tmpdir}/${basename}.tex
+output=${tmpdir}/${basename}.pdf
+
+pandoc_error()
+{
+	echo ""
+	echo "Error generating LaTeX file from Markdown!"
+	echo ""
+	echo "Is ${template} installed in pandoc's data/templates directory?"
+
+	exit 1
+}
+
+compile_markdown()
+{
+	echo "Generating memo using template '${template}'..."
+
+	pandoc --smart --standalone --latex-engine=xelatex \
+		--template=${template} \
+		--output=${tex_file} \
+		${markdown} || pandoc_error
+
+	echo "Compiling memo using latexmk..."
+
+	latexmk -pdf -xelatex -output-directory=${tmpdir} \
+		-interaction=nonstopmode \
+		${tex_file} || exit 1
+
+	cp ${output} .
+}
+
+if [ "${preview_mode}" ]
+then
+	while true
+	do
+		if [ ! "${basename}.pdf" -nt "${markdown}"  ]
+		then
+			compile_markdown
+		fi
+
+		sleep 1
+	done
+else
+	compile_markdown
+fi
+
+rm -rf $tmpdir
