@@ -180,15 +180,9 @@
   \@address
 
   \ifdefempty{\@title}{}{
-    \vspace{.25in}
-
     \begin{center}
-      {
-        \@title
-      }
+      \textbf{\@title}
     \end{center}
-
-    \vspace{.25in}
   }
 }
 
