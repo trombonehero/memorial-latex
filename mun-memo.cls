@@ -37,11 +37,13 @@
 \RequirePackage{mun-fonts}
 \RequirePackage{mun-letterhead}
 
+\RequirePackage{booktabs}
 \RequirePackage{etoolbox}
 \RequirePackage{fancyhdr}
 \RequirePackage[top=0.5in,bottom=1in]{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{hyperref}
+\RequirePackage{longtable}
 \RequirePackage{setspace}
 \RequirePackage{tabularx}
 \RequirePackage{titlesec}
