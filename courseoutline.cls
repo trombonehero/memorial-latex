@@ -230,6 +230,7 @@
 }
 
 \newcommand{\acceditationunits}[1]{\newcommand\@aus{#1}}
+\newcommand{\contentcategories}[1]{\newcommand\@content{#1}}
 
 \newcommand{\credithours}[1]{\renewcommand\@credithours{#1}}
 \newcommand{\labhours}[1]{\newcommand\@labhours{#1}}
@@ -360,8 +361,12 @@
     \head{Credit value} & \@credithours~credit-hours        \\
 
     \ifdefined \@aus
-      \head{Accreditation units} & \wide{\@aus}\\
+      \head{Accreditation units} & \@aus &
     \fi
+    \ifdefined \@content
+      \head{Content categories} & \@content
+    \fi
+    \\
 
     \ifdefined \@labhours
       \head{Lab hours}  & \multicolumn{3}{l}{\@labhours}    \\
@@ -465,16 +470,20 @@ staff technologist, and professor.
 
 
 \section{Inclusion and Equity}
-Students who require physical or
-academic accommodations are encouraged to speak privately to the instructor so
-that appropriate arrangements can be made to ensure your full participation in
-the course. All conversations will remain confidential.
+
+Students who require accommodations are encouraged to contact the Glenn Roy
+Blundon Centre, \url{http://www.mun.ca/blundon/about/index.php}.
+The mission of the Blundon Centre is to provide and co-ordinate programs and
+services that enable students with disabilities to maximize their educational
+potential and to increase awareness of inclusive values among all members of the
+university community.
 
 The university experience is enriched by the diversity of viewpoints, values,
-and backgrounds that each class participant possesses. In order for this
-course to encourage as much insightful and comprehensive discussion among
-class participants as possible, there is an expectation that dialogue will be
-collegial and respectful across disciplinary, cultural, and personal boundaries.
+and backgrounds that each class participant possesses.
+In order for this course to encourage as much insightful and comprehensive
+discussion among class participants as possible, there is an expectation that
+dialogue will be collegial and respectful across disciplinary, cultural, and
+personal boundaries.
 
 
 \section{Student Assistance}
