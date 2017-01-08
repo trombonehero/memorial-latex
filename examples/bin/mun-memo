@@ -69,9 +69,12 @@ compile_markdown()
 
 if [ "${preview_mode}" ]
 then
+	touch ${basename}.pdf
+	touch ${markdown}
+
 	while true
 	do
-		if [ ! "${basename}.pdf" -nt "${markdown}"  ]
+		if ! [ "${basename}.pdf" -nt "${markdown}"  ]
 		then
 			compile_markdown
 		fi
@@ -81,5 +84,3 @@ then
 else
 	compile_markdown
 fi
-
-rm -rf $tmpdir
