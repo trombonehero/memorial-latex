@@ -215,7 +215,11 @@
     \end{center}
   \fi
 
-  \cleardoublepage
+  \clearpage
+  \makebox[\textwidth][c]{%
+    \frame{\includegraphics[trim={4cm 0 0 0},clip,width=7.5in]{guilloche}}%
+  }
+  \clearpage
   \setcounter{page}{1}
 }
 
