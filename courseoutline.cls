@@ -324,7 +324,7 @@
     \head{Instructor}
     & \parbox[t]{2in}{
       \@name \\
-      \@email \\
+      \href{mailto:\@email}{\tt \@email} \\
       \@phone \\
       \@office
     }
