@@ -194,6 +194,7 @@
 \newcommand{\officehours}[1]{\renewcommand\@officehours{#1}}
 
 \newcommand{\ta}[1]{\renewcommand\@talabel{TA(s)}\renewcommand\@ta{#1}}
+\newcommand{\talabel}[1]{\renewcommand\@talabel{#1}}
 \newcommand{\tamail}[1]{\renewcommand\@tamail{#1}}
 \newcommand{\taphone}[1]{\renewcommand\@taphone{#1}}
 \newcommand{\taoffice}[1]{\renewcommand\@taoffice{#1}}
@@ -329,7 +330,12 @@
       \@office
     }
     & \head{\@talabel}
-    & \parbox[t][][t]{2in}{\@ta}
+    & \parbox[t][][t]{2in}{
+      \@ta \\
+      \href{mailto:\@tamail}{\tt \@tamail} \\
+      \@taphone \\
+      \@taoffice
+    }
     \\
     \\[-.5em]
     \head{Office Hours} & \@officehours  &              & \@tahours
