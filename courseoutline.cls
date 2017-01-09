@@ -95,7 +95,7 @@
 \RequirePackage{mun-colour}
 
 \RequirePackage{fancyhdr}
-\RequirePackage[top=0.5in]{geometry}
+\RequirePackage[top=0.5in,bottom=1in]{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{hyperref}
 \RequirePackage{tabularx}
