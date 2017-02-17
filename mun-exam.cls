@@ -71,7 +71,7 @@
 \RequirePackage{mun-colour}
 
 \RequirePackage{calc}
-\RequirePackage[top=0.5in, left=1in, right=1in, bottom=1in, includeheadfoot]{geometry}
+\RequirePackage[top=0.5in, left=1in, right=1in, bottom=.5in, includeheadfoot]{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{hyperref}
 \RequirePackage{ifthen}
@@ -201,6 +201,10 @@
     }
 
     \pagebreak
+    \makebox[\textwidth][c]{%
+      \frame{\includegraphics[trim={4cm 0 0 0},clip,width=7.5in]{guilloche}}%
+    }
+    \clearpage
   \else
 
     \section*{Instructions}
@@ -213,13 +217,13 @@
     \begin{center}
       \gradetable[h][questions]
     \end{center}
+
+    \pagebreak
+    \makebox[\textwidth][c]{%
+      \frame{\includegraphics[trim={4cm 0 0 0},clip,height=9in,width=7.5in]{guilloche}}%
+    }
   \fi
 
-  \clearpage
-  \makebox[\textwidth][c]{%
-    \frame{\includegraphics[trim={4cm 0 0 0},clip,width=7.5in]{guilloche}}%
-  }
-  \clearpage
   \setcounter{page}{1}
 }
 
