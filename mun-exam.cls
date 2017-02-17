@@ -224,6 +224,8 @@
     }
   \fi
 
+  \thispagestyle{empty}
+  \pagebreak
   \setcounter{page}{1}
 }
 
