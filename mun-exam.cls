@@ -70,6 +70,7 @@
 \RequirePackage{mun-fonts}
 \RequirePackage{mun-colour}
 
+\RequirePackage{amsmath}
 \RequirePackage{calc}
 \RequirePackage[top=0.5in, left=1in, right=1in, bottom=.5in, includeheadfoot]{geometry}
 \RequirePackage{graphicx}
@@ -80,6 +81,7 @@
 \RequirePackageWithOptions{mun-letterhead}
 \RequirePackage{parskip}
 \RequirePackage{setspace}
+\RequirePackage{siunitx}
 \RequirePackage{tabularx}
 \RequirePackage{titlesec}
 \RequirePackage{verbatim}
