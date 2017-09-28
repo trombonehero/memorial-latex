@@ -387,9 +387,9 @@
     \fi
 
     \head{Textbook}
-      & \multicolumn{3}{l}{\parbox[t]{5.5in}{\@textbook}}   \\
+      & \multicolumn{3}{l}{\parbox[t]{4.75in}{\@textbook}}   \\
     \head{References}
-      & \multicolumn{3}{l}{\parbox[t]{5.5in}{\@references}} \\
+      & \multicolumn{3}{l}{\parbox[t]{4.75in}{\@references}} \\
   \end{tabularx}
 
   \renewcommand{\arraystretch}{1.25}
