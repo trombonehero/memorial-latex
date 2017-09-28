@@ -204,6 +204,8 @@
 \newcommand{\communication}[1]{\newcommand\@othercomms{#1}}
 \newcommand{\officialdescription}[1]{\renewcommand\@calendar{#1}}
 \newcommand{\prerequisites}[1]{\newcommand\@prereqs{#1}}
+\newcommand{\corequisites}[1]{\newcommand\@coreqs{#1}}
+\newcommand{\creditrestrictions}[1]{\newcommand\@creditrestr{#1}}
 
 \newcommand{\lecture}[4]{
   \renewcommand\@lecturedays{#1}
@@ -351,6 +353,8 @@
     \\[-.75em]
                              \head{Calendar entry} & \wide{\@calendar}    \\
     \ifdefined \@prereqs     \head{Prerequisite(s)}& \wide{\@prereqs}     \\ \fi
+    \ifdefined \@coreqs      \head{Co-Requisites} & \wide{\@coreqs} \\ \fi
+    \ifdefined \@creditrestr \head{Credit Restrictions}             & \wide{\@creditrestr} \\ \fi        
 
     \head{Schedule}
         & Lecture     \hfill \lecturetimes   & \multicolumn{2}{l}{\@lectureroom}
