@@ -70,7 +70,6 @@
 % \website{http://faculty.uni.com/course_website}      % no need for \url{}!
 % \communication{other ways to communicate}
 % \officialdescription{description from official (accreditation?) documents}
-% \fulldescription{a longer, perhaps less official, description}
 %
 % \prerequisites{ENGI1020,MATH1000}
 %
