@@ -94,6 +94,7 @@
 \RequirePackage{mun-fonts}
 \RequirePackage{mun-colour}
 
+\RequirePackage{booktabs}
 \RequirePackage{fancyhdr}
 \RequirePackage[top=0.5in,bottom=1in]{geometry}
 \RequirePackage{graphicx}
