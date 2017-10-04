@@ -150,16 +150,9 @@
 
 \newcommand{\@name}{Dr No}
 \newcommand{\@email}{dr.no@mun.ca}
-\newcommand{\@phone}{864-XXXX}
 \newcommand{\@office}{EN-XXXX}
 \newcommand{\@officehours}{}
 \newcommand{\@tahours}{}
-
-\newcommand{\@talabel}{}
-\newcommand{\@ta}{}
-\newcommand{\@tamail}{}
-\newcommand{\@taphone}{}
-\newcommand{\@taoffice}{}
 
 \newcommand{\@calendar}{includes modules on foo, bar, baz and wibble.}
 
@@ -177,7 +170,6 @@
 \@labsfalse
 
 \newcommand{\@textbook}{\textendash}
-\newcommand{\@references}{\textendash}
 
 
 %
@@ -191,15 +183,15 @@
 
 \newcommand{\instructor}[1]{\renewcommand\@name{#1}}
 \newcommand{\email}[1]{\renewcommand\@email{#1}}
-\newcommand{\phone}[1]{\renewcommand\@phone{#1}}
+\newcommand{\phone}[1]{\newcommand\@phone{#1}}
 \newcommand{\office}[1]{\renewcommand\@office{#1}}
 \newcommand{\officehours}[1]{\renewcommand\@officehours{#1}}
 
-\newcommand{\ta}[1]{\renewcommand\@talabel{TA(s)}\renewcommand\@ta{#1}}
-\newcommand{\talabel}[1]{\renewcommand\@talabel{#1}}
-\newcommand{\tamail}[1]{\renewcommand\@tamail{#1}}
-\newcommand{\taphone}[1]{\renewcommand\@taphone{#1}}
-\newcommand{\taoffice}[1]{\renewcommand\@taoffice{#1}}
+\newcommand{\ta}[1]{\newcommand\@talabel{TA(s)}\newcommand\@ta{#1}}
+\newcommand{\talabel}[1]{\newcommand\@talabel{#1}}
+\newcommand{\tamail}[1]{\newcommand\@tamail{#1}}
+\newcommand{\taphone}[1]{\newcommand\@taphone{#1}}
+\newcommand{\taoffice}[1]{\newcommand\@taoffice{#1}}
 \newcommand{\tahours}[1]{\renewcommand\@tahours{#1}}
 
 \newcommand{\website}[1]{\newcommand\@website{#1}}
@@ -242,7 +234,7 @@
 \newcommand{\otherrequirements}[1]{\newcommand\@otherrequirements{#1}}
 
 \newcommand{\textbook}[1]{\renewcommand\@textbook{#1}}
-\newcommand{\references}[1]{\renewcommand\@references{#1}}
+\newcommand{\references}[1]{\newcommand\@references{#1}}
 
 
 %
@@ -335,13 +327,15 @@
       \@phone \\
       \@office
     }
-    & \head{\@talabel}
-    & \parbox[t][][t]{2in}{
-      \@ta \\
-      \href{mailto:\@tamail}{\tt \@tamail} \\
-      \@taphone \\
-      \@taoffice
-    }
+    & \ifdefined \@talabel \head{\@talabel} \fi
+    & \ifdefined \@ta
+        \parbox[t][][t]{2in}{
+          \@ta \\
+          \ifdefined \@tamail \href{mailto:\@tamail}{\tt \@tamail} \\ \fi
+          \ifdefined \@taphone \@taphone \\ \fi
+          \ifdefined \@taoffice \@taoffice \fi
+      }
+    \fi
     \\
     \\[-.5em]
     \head{Office Hours} & \@officehours  &              & \@tahours
@@ -392,8 +386,10 @@
 
     \head{Textbook}
       & \multicolumn{3}{l}{\parbox[t]{4.75in}{\@textbook}}   \\
-    \head{References}
+    \ifdefined \@references
+      \head{References}
       & \multicolumn{3}{l}{\parbox[t]{4.75in}{\@references}} \\
+    \fi
   \end{tabularx}
 
   \renewcommand{\arraystretch}{1.25}
