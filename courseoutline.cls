@@ -80,8 +80,10 @@
 %
 % Based on this input, the class exports the following commands:
 %
-% \nameandnumber       % e.g. "Engineering 1000"
-% \shortname           % e.g. "ENGI1000"
+% \nameandnumber       % e.g., "Engineering 1000"
+% \shortnumber         % e.g., "ENGI 1000"
+% \shortname           % e.g., "Introduction to Stuff"
+% \fullname            % e.g., "Engineering 1000: Introduction to Stuff"
 %
 
 \NeedsTeXFormat{LaTeX2e}
@@ -247,7 +249,9 @@
 % Externally-visible outputs (also documented in the header comment):
 %
 \newcommand{\nameandnumber}{\@shortfaculty~\@coursenumber}
-\newcommand{\shortname}{\nameandnumber:~\@coursename}
+\newcommand{\shortname}{\@coursename}
+\newcommand{\shortnumber}{\@courseprefix~\@coursenumber}
+\newcommand{\fullname}{\nameandnumber:~\@coursename}
 
 \newcommand{\lecturetimes}{
   \@lecturedays~\@lecturestart--\@lecturefinish
@@ -311,7 +315,7 @@
     \parbox{2in}{
       \neutralcolour \bf
       Course Outline \\
-      \@courseprefix \@coursenumber \\
+      \shortnumber \\
       \\
       \@courseterm
     }
@@ -319,7 +323,7 @@
 
   \vspace{.2in}
 
-  {\bf \LARGE \headercolour \shortname} \\
+  {\bf \LARGE \headercolour \fullname} \\
 
   \vspace{.1in}
 
