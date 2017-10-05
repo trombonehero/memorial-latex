@@ -366,18 +366,17 @@
         & Lab         \hfill \labtimes       & \multicolumn{2}{l}{\@labroom}
       \\ \fi
 
-    \head{Credit value} & \@credithours~credit-hours        \\
+    \head{Credit value} & \@credithours~credit-hours
+    & \ifdefined \@labhours \head{Lab hours} \fi
+    & \ifdefined \@labhours \@labhours \fi
+    \\
 
     \ifdefined \@aus
       \head{Accreditation units} & \@aus &
-    \fi
-    \ifdefined \@content
-      \head{Content categories} & \@content
-    \fi
-    \\
-
-    \ifdefined \@labhours
-      \head{Lab hours}  & \multicolumn{3}{l}{\@labhours}    \\
+      \ifdefined \@content
+        \head{Content categories} & \@content
+      \fi
+      \\
     \fi
 
     \ifdefined \@otherrequirements
