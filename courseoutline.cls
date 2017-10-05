@@ -97,7 +97,7 @@
 
 \RequirePackage{booktabs}
 \RequirePackage{fancyhdr}
-\RequirePackage[top=0.5in,bottom=1in]{geometry}
+\RequirePackage[margin=.75in,bottom=1.5in]{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{hyperref}
 \RequirePackage{tabularx}
@@ -300,7 +300,7 @@
   \thispagestyle{plain}
 
   \mbox{
-    \parbox{3.25in}{
+    \parbox{5.5in}{
       \includegraphics[width=1.1in]{memorial} \vspace{6pt} \\
       {\neutralcolour \bf \hspace{5pt}\@faculty}
     }
