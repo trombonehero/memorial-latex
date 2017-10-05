@@ -226,7 +226,7 @@
   \@labstrue
 }
 
-\newcommand{\acceditationunits}[1]{\newcommand\@aus{#1}}
+\newcommand{\accreditationunits}[1]{\newcommand\@aus{#1}}
 \newcommand{\contentcategories}[1]{\newcommand\@content{#1}}
 
 \newcommand{\credithours}[1]{\renewcommand\@credithours{#1}}
