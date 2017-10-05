@@ -324,7 +324,7 @@
     & \parbox[t]{2in}{
       \@name \\
       \href{mailto:\@email}{\tt \@email} \\
-      \@phone \\
+      \ifdefined \@phone \@phone \\ \fi
       \@office
     }
     & \ifdefined \@talabel \head{\@talabel} \fi
