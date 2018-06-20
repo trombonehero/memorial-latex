@@ -99,11 +99,11 @@
 % The kind of exam (mid-term, final, etc.):
 %
 \if@midterm
-\newcommand{\@examtype}{Mid-term}
+\newcommand{\@examtype}{Mid-term test}
 \fi
 
 \if@final
-\newcommand{\@examtype}{Final}
+\newcommand{\@examtype}{Final exam}
 \fi
 
 
@@ -174,7 +174,7 @@
     \parbox{2.5in}{
       \neutralcolour
       \textbf{\@courseprefix \@coursenumber:} \@coursename \\
-      \textbf{\@examtype~exam} \\
+      \textbf{\@examtype} \\
       \textbf{\@examdate}
       \vspace{2.25em} \\
       \makebox[2.5in]{Name:\enspace\hrulefill}
@@ -189,7 +189,7 @@
 
     {\bf \LARGE \headercolour \@courseprefix \@coursenumber: \@coursename}
 
-    \section*{\@examtype~exam}
+    \section*{\@examtype}
 
     \begin{center}
       \gradetable[v][questions]
