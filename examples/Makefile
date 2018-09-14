@@ -11,7 +11,7 @@ clean:
 
 
 .md.tex:
-	pandoc --smart --standalone --latex-engine=xelatex \
+	pandoc +smart --standalone --pdf-engine=xelatex \
 		--template=mun-memo-template.tex \
 		$< --output=$@
 
