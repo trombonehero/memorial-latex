@@ -187,8 +187,9 @@
 \newcommand{\office}[1]{\renewcommand\@office{#1}}
 \newcommand{\officehours}[1]{\renewcommand\@officehours{#1}}
 
-\newcommand{\ta}[1]{\newcommand\@talabel{TA(s)}\newcommand\@ta{#1}}
-\newcommand{\talabel}[1]{\newcommand\@talabel{#1}}
+\newcommand\@talabel{TA(s)}
+\newcommand{\ta}[1]{\newcommand\@ta{#1}}
+\newcommand{\talabel}[1]{\renewcommand\@talabel{#1}}
 \newcommand{\tamail}[1]{\newcommand\@tamail{#1}}
 \newcommand{\taphone}[1]{\newcommand\@taphone{#1}}
 \newcommand{\taoffice}[1]{\newcommand\@taoffice{#1}}
@@ -327,7 +328,7 @@
       \ifdefined \@phone \@phone \\ \fi
       \@office
     }
-    & \ifdefined \@talabel \head{\@talabel} \fi
+    & \ifdefined \@ta \head{\@talabel} \fi
     & \ifdefined \@ta
         \parbox[t][][t]{2in}{
           \@ta \\
