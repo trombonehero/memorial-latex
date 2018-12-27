@@ -124,6 +124,13 @@
 \DeclareOption{safelabs}{\@safelabstrue}
 
 %
+% Allow some text about Supplemental Instruction to be emitted.
+%
+\newif\if@si
+\@sifalse
+\DeclareOption{supplementalinstruction}{\@sitrue}
+
+%
 % Pass the remaining options to 'article'.
 %
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
@@ -461,6 +468,22 @@ faculty advisors.
 
 \newcommand{\boilerplate}[0]{
 \academicintegrity
+
+
+\if@si
+\section{Supplemental Instruction}
+
+Supplemental Instruction (SI) is a peer-facilitated learning enhancement model
+designed to improve student learning and performance in difficult courses.
+During SI sessions, the SI Leader engages students using interactive learning
+strategies, which encourage involvement, comprehension, and synthesis of
+subject content.
+
+SI is attached to this course to provide a systematic and structured approach
+for processing the course material.
+Two SI sessions will be offered weekly.
+The schedule will be announced in the first week of classes.
+\fi
 
 
 \if@safelabs
