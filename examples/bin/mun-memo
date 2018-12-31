@@ -53,7 +53,7 @@ compile_markdown()
 {
 	echo "Generating memo using template '${template}'..."
 
-	pandoc --smart --standalone --latex-engine=xelatex \
+	pandoc --standalone --pdf-engine=xelatex \
 		--template=${template} \
 		--output=${tex_file} \
 		${markdown} || pandoc_error
