@@ -56,6 +56,7 @@ compile_markdown()
 	pandoc --standalone --pdf-engine=xelatex \
 		--template=${template} \
 		--output=${tex_file} \
+		--data-dir=$HOME/.pandoc \
 		${markdown} || pandoc_error
 
 	echo "Compiling memo using latexmk..."
