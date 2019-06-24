@@ -233,6 +233,29 @@
 
 
 %
+% Leave space for workings in the actual exam but not in the answer key.
+%
+% Usage:
+%
+% What is the average airspeed of an unladen swallow?
+%
+% \workings{8em}
+%
+% \begin{solutionordottedlines}[4em]
+% \end{solutionordottedlines}
+%
+\newcommand{\workings}[1]{%
+  \ifprintanswers
+  \else
+    \textbf{Workings:}
+    \vspace{#1}
+    \\
+    \textbf{Answer:}
+  \fi
+}
+
+
+%
 % Show question points in the right margin with brackets around them.
 %
 \extrawidth{-.5in}
