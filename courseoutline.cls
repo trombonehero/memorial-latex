@@ -41,6 +41,9 @@
 %   - engineering:  Use the names "Engineering", "Faculty of Engineering", etc.
 %                   in the relevant places and emit the Faculty's policy on
 %                   academic integrity ("Like Professional Engineers...").
+%   - ece:          Use the names "Electrical and Computer Engineering", etc.
+%                   in the relevant places and emit the Engineering policy on
+%                   academic integrity ("Like Professional Engineers...").
 %   - safelabs:     Don't emit a "Lab Safety" section even if a lab slot is
 %                   declared with \lab. This is intended for use with
 %                   computer labs (not electrical, structural, chemical labs).
@@ -114,6 +117,10 @@
 \@engineeringfalse
 \DeclareOption{engineering}{\@engineeringtrue}
 
+\newif\if@ece
+\@ecefalse
+\DeclareOption{ece}{\@ecetrue}
+
 %
 % Don't emit the "Lab Safety" section, even if there is a lab slot.
 % This is for use with computer labs, which don't require PPE, etc. like
@@ -145,9 +152,14 @@
 \newcommand{\@faculty}{Unknown Faculty}
 \newcommand{\@shortfaculty}{Unknown}
 
-\if@engineering
-\renewcommand{\@faculty}{Faculty of Engineering and Applied Science}
-\renewcommand{\@shortfaculty}{Engineering}
+\if@ece
+  \renewcommand{\@faculty}{Department of Electrical and Computer Engineering}
+  \renewcommand{\@shortfaculty}{ECE}
+\else
+  \if@engineering
+    \renewcommand{\@faculty}{Faculty of Engineering and Applied Science}
+    \renewcommand{\@shortfaculty}{Engineering}
+  \fi
 \fi
 
 \newcommand{\@courseprefix}{ENGI}
