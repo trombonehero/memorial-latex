@@ -78,7 +78,7 @@
 \RequirePackage{ifthen}
 \RequirePackage{listings}
 \RequirePackage[framemethod=tikz]{mdframed}
-\RequirePackageWithOptions{mun-letterhead}
+\RequirePackage{mun-letterhead}
 \RequirePackage{parskip}
 \RequirePackage{setspace}
 \RequirePackage{siunitx}
