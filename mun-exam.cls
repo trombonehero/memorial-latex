@@ -247,7 +247,7 @@
 \newcommand{\workings}[1]{%
   \ifprintanswers
   \else
-    \textbf{Workings:}
+    \textbf{Workings (optional):}
     \vspace{#1}
     \\
     \textbf{Answer:}
