@@ -72,6 +72,7 @@
 
 \RequirePackage{amsmath}
 \RequirePackage{calc}
+\RequirePackage{framed}
 \RequirePackage[top=0.5in, left=1in, right=1in, bottom=.5in, includeheadfoot]{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{hyperref}
@@ -176,10 +177,13 @@
       \textbf{\@courseprefix \@coursenumber:} \@coursename \\
       \textbf{\@examtype} \\
       \textbf{\@examdate}
-      \vspace{2.25em} \\
-      \makebox[2.5in]{Name:\enspace\hrulefill}
-      \vspace{-1.2em} \\
-      \makebox[2.5in]{Student ID:\enspace\hrulefill}
+      \begin{framed}
+      Name:
+      \end{framed}
+
+      \begin{framed}
+      Student ID:
+      \end{framed}
     }
   }
 
