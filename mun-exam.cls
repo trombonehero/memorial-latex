@@ -179,7 +179,7 @@
     \parbox{3.25in}{\letterhead}
     \parbox{2.5in}{
       \neutralcolour
-      \textbf{\@courseprefix \@coursenumber:} \@coursename \\
+      \textbf{\@courseprefix~\@coursenumber:} \@coursename \\
       \textbf{\@examtype} \\
       \textbf{\@examdate}
       \begin{framed}
