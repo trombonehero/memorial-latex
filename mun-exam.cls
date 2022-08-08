@@ -90,7 +90,12 @@
 \makeatletter
 
 
+\if@ece
+\newcommand{\@courseprefix}{ECE}
+\else
 \newcommand{\@courseprefix}{ENGI}
+\fi
+
 \newcommand{\@coursename}{Short Name}
 \newcommand{\@coursenumber}{XXXX}
 \newcommand{\@examdate}{Unspecified date}
